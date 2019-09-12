@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+
+<AnchorPane prefHeight="467.0" prefWidth="798.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.CompanyController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #00A1F1;">
+               <children>
+                  <VBox layoutX="10.0" layoutY="125.0" prefHeight="161.0" prefWidth="202.0">
+                     <children>
+                        <JFXTextField fx:id="txtName" labelFloat="true" promptText="Tên nhà cung cấp" unFocusColor="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="30.0" top="10.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtAddress" labelFloat="true" prefHeight="26.0" prefWidth="206.0" promptText="Địa chỉ">
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                           <unFocusColor>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="#fffdfd" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </unFocusColor>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtTell" labelFloat="true" promptText="Số điện thoại" unFocusColor="#f8f4f4" />
+                     </children>
+                  </VBox>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="76.0" prefHeight="33.0" prefWidth="185.0" styleClass="company-text" text="Thêm Nhà Cung Cấp" />
+                  <JFXButton layoutX="28.0" layoutY="345.0" onAction="#ClickAddCompany" prefHeight="34.0" prefWidth="63.0" styleClass="company-button" text="Thêm" />
+                  <JFXButton layoutX="120.0" layoutY="349.0" onAction="#ClickClose" prefHeight="34.0" prefWidth="63.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
+                  <ImageView fitHeight="70.0" fitWidth="85.0" layoutX="76.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/factory.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="496.0">
+               <children>
+                  <AnchorPane prefHeight="70.0" prefWidth="316.0" style="-fx-background-color: #ffff99;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label layoutX="202.0" layoutY="26.0" style="-fx-text-fill: #0019ff;" styleClass="company-text" text="Danh Sách Nhà Cung Cấp" />
+                        <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="105.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/company.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <TableView fx:id="tableView" layoutY="100.0" prefHeight="266.0" prefWidth="555.0">
+                    <columns>
+                      <TableColumn fx:id="tbId" prefWidth="51.0" text="STT" />
+                      <TableColumn fx:id="tbName" prefWidth="193.0" text="Tên" />
+                        <TableColumn fx:id="tbAddress" prefWidth="181.0" text="Địa Chỉ" />
+                        <TableColumn fx:id="tbTell" prefWidth="129.0" text="Số Điên Thoại" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

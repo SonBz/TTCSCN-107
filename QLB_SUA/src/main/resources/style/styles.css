@@ -1,0 +1,36 @@
+#avata{
+    -fx-background-image: url("/img/images.jpg");
+}
+.toolbar-button:hover{
+    -fx-background-color: #99ffff;
+    -fx-text-fill: -fx-primary;
+
+}
+#loginbutton{
+    -fx-background-color: #1a1a00;
+    -fx-border-color: #ffff4d;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-text-fill: #B2B2B2;
+}
+.contronlerbutton{
+    -fx-background-color: #e6fff8;
+    -fx-border-color: #3F729B;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.company-text{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 20px;
+}
+.company-button{
+    -fx-background-color: #FFCC00;
+    -fx-border-color: #FFCC00;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+/*.text-field{*/
+/*    -fx-border-color: #202020;*/
+/*    -fx-border-radius: 20px;*/
+/*    -fx-background-radius: 50px;*/
+/*}*/

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="499.0" prefWidth="715.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ProductController">
+   <children>
+      <JFXTabPane layoutX="137.0" layoutY="88.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="Thêm Sản Phẩm">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="521.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <AnchorPane prefHeight="52.0" prefWidth="600.0" style="-fx-background-color: #A4C639;" AnchorPane.bottomAnchor="380.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="430.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/cow_ri.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="254.0" layoutY="26.0" prefHeight="30.0" prefWidth="162.0" text="Thêm Sản Phẩm" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="56.0" fitWidth="82.0" layoutX="162.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/cow.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <VBox layoutX="25.0" layoutY="77.0" prefHeight="177.0" prefWidth="262.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="120.0">
+                           <children>
+                              <JFXTextField fx:id="txtName" blendMode="SRC_ATOP" depthTest="ENABLE" focusColor="#4c75f2" labelFloat="true" prefHeight="25.0" prefWidth="176.0" promptText="Tên Sữa" styleClass="text-field" unFocusColor="#73c342">
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                                 <effect>
+                                    <Glow level="0.04" />
+                                 </effect>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txtProductType" focusColor="#4f66e8" labelFloat="true" prefHeight="25.0" prefWidth="168.0" promptText="Loại Sữa" styleClass="text-field" unFocusColor="#235feb">
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txtPrice" labelFloat="true" promptText="Giá" styleClass="text-field">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="328.0" layoutY="93.0" prefHeight="178.0" prefWidth="241.0" stylesheets="@../style/styles.css" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="140.0">
+                           <children>
+                              <Label contentDisplay="RIGHT" graphicTextGap="0.0" prefHeight="27.0" prefWidth="242.0" text="Hãng :">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <JFXComboBox fx:id="cbCompany" prefHeight="27.0" prefWidth="212.0">
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" />
+                                 </VBox.margin>
+                              </JFXComboBox>
+                              <Label contentDisplay="RIGHT" graphicTextGap="0.0" prefHeight="27.0" prefWidth="241.0" text="Dung Tích :">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <JFXComboBox fx:id="cbCapacity" prefHeight="27.0" prefWidth="215.0" />
+                           </children>
+                        </VBox>
+                        <JFXButton layoutX="280.0" layoutY="343.0" onAction="#clickSave" prefHeight="33.0" prefWidth="64.0" styleClass="contronlerbutton" text="Lưu">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="381.0" layoutY="343.0" prefHeight="31.0" prefWidth="67.0" styleClass="contronlerbutton" text="Thoát">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Sản Phẩm">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane prefHeight="94.0" prefWidth="600.0" style="-fx-background-color: #A4C639;" AnchorPane.bottomAnchor="380.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="475.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/cow_ri.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="269.0" layoutY="26.0" prefHeight="30.0" prefWidth="192.0" text="Danh Sách Sản Phẩm" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="56.0" fitWidth="82.0" layoutX="192.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/cow.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="tableView" layoutY="62.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                          <columns>
+                            <TableColumn fx:id="tbStt" prefWidth="75.0" text="STT" />
+                            <TableColumn fx:id="tbName" prefWidth="149.0" text="Tên" />
+                              <TableColumn fx:id="tbPrice" prefWidth="63.0" text="Giá" />
+                              <TableColumn fx:id="tbProductType" prefWidth="139.0" text="Loại Sữa" />
+                              <TableColumn fx:id="tbCapacity" prefWidth="107.0" text="Thể Tích" />
+                              <TableColumn fx:id="tbCompany" prefWidth="181.0" text="Nhà Cung Cấp" />
+                          </columns>
+                        </TableView>
+                        <JFXButton layoutX="579.0" layoutY="411.0" prefHeight="25.0" prefWidth="69.0" styleClass="contronlerbutton" text="Thoát" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>
