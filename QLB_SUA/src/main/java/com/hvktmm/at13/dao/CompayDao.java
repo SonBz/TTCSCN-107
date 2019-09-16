@@ -198,4 +198,28 @@ public class CompayDao {
         return id;
 
     }
+    public void deleteCompany(String name){
+        try {
+            connection = getConnection();
+            String sql="delete from company where name=?";
+            ptmt=connection.prepareStatement(sql);
+            ptmt.setString(1,name);
+            ptmt.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

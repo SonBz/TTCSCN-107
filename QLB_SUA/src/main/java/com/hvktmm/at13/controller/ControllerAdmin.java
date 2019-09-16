@@ -63,6 +63,9 @@ public class ControllerAdmin implements Initializable {
     public void  ClickCompany(ActionEvent event) throws Exception {
         Redict("/view/Company.fxml", "Công Ty");
     }
+    public void  ClickUser(ActionEvent event) throws Exception {
+        Redict("/view/User.fxml", "Quản Lý Nhân Viên");
+    }
 
     public void Redict(String scene,String title) throws Exception{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(scene));

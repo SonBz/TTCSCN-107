@@ -14,6 +14,11 @@ public class CompanyItem {
         this.address = new SimpleStringProperty(address);
         this.phone_number = new SimpleStringProperty(phone_number);
     }
+    public CompanyItem(String name, String address, String phone_number) {
+        this.name = new SimpleStringProperty(name);
+        this.address = new SimpleStringProperty(address);
+        this.phone_number = new SimpleStringProperty(phone_number);
+    }
 
     public CompanyItem() {
     }

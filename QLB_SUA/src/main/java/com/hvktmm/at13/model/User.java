@@ -15,6 +15,30 @@ public class User {
     private Date date_of_birth;
     private String gender;
 
+    public User(String first_name, String last_name, String username, String password, String email, String phone_number, String address, Date date_of_birth, String gender) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.address = address;
+        this.date_of_birth = date_of_birth;
+        this.gender = gender;
+    }
+    public User(String first_name, String last_name, String username, String email, String phone_number, String address, Date date_of_birth, String gender) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.username = username;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.address = address;
+        this.date_of_birth = date_of_birth;
+        this.gender = gender;
+    }
+    public User() {
+    }
+
     public String getFirst_name() {
         return first_name;
     }

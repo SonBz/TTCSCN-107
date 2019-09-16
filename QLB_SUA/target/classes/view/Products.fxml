@@ -19,7 +19,7 @@
 
 <AnchorPane prefHeight="499.0" prefWidth="715.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ProductController">
    <children>
-      <JFXTabPane layoutX="137.0" layoutY="88.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <JFXTabPane layoutX="137.0" layoutY="88.0" prefHeight="499.0" prefWidth="715.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <tabs>
             <Tab text="Thêm Sản Phẩm">
               <content>
@@ -115,7 +115,7 @@
                               <Font size="15.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton layoutX="381.0" layoutY="343.0" prefHeight="31.0" prefWidth="67.0" styleClass="contronlerbutton" text="Thoát">
+                        <JFXButton layoutX="381.0" layoutY="343.0" onAction="#clickExit" prefHeight="31.0" prefWidth="67.0" styleClass="contronlerbutton" text="Thoát">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -149,7 +149,7 @@
                         </AnchorPane>
                         <TableView fx:id="tableView" layoutY="62.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
                           <columns>
-                            <TableColumn fx:id="tbStt" prefWidth="75.0" text="STT" />
+                            <TableColumn fx:id="tbId" prefWidth="75.0" text="STT" />
                             <TableColumn fx:id="tbName" prefWidth="149.0" text="Tên" />
                               <TableColumn fx:id="tbPrice" prefWidth="63.0" text="Giá" />
                               <TableColumn fx:id="tbProductType" prefWidth="139.0" text="Loại Sữa" />
@@ -157,7 +157,7 @@
                               <TableColumn fx:id="tbCompany" prefWidth="181.0" text="Nhà Cung Cấp" />
                           </columns>
                         </TableView>
-                        <JFXButton layoutX="579.0" layoutY="411.0" prefHeight="25.0" prefWidth="69.0" styleClass="contronlerbutton" text="Thoát" />
+                        <JFXButton layoutX="579.0" layoutY="411.0" onAction="#clickExit" prefHeight="25.0" prefWidth="69.0" styleClass="contronlerbutton" text="Thoát" />
                      </children></AnchorPane>
               </content>
             </Tab>

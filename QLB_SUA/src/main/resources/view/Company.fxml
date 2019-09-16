@@ -65,14 +65,16 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <TableView fx:id="tableView" layoutY="100.0" prefHeight="266.0" prefWidth="555.0">
+                  <TableView fx:id="tableView" layoutX="1.0" layoutY="137.0" prefHeight="266.0" prefWidth="555.0">
                     <columns>
                       <TableColumn fx:id="tbId" prefWidth="51.0" text="STT" />
                       <TableColumn fx:id="tbName" prefWidth="193.0" text="Tên" />
-                        <TableColumn fx:id="tbAddress" prefWidth="181.0" text="Địa Chỉ" />
                         <TableColumn fx:id="tbTell" prefWidth="129.0" text="Số Điên Thoại" />
+                        <TableColumn fx:id="tbAddress" prefWidth="181.0" text="Địa Chỉ" />
                     </columns>
                   </TableView>
+                  <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="14.0" layoutY="97.0" onInputMethodTextChanged="#searchUser" onKeyReleased="#searchUser" prefHeight="25.0" prefWidth="218.0" promptText="tìm kiếm" />
+                  <JFXButton layoutX="462.0" layoutY="417.0" onAction="#clickDelete" prefHeight="25.0" prefWidth="63.0" text="Xóa" />
                </children></AnchorPane>
         </items>
       </SplitPane>

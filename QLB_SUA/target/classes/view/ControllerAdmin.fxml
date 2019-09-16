@@ -60,7 +60,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="400.0" layoutY="390.0" onAction="#ClickCompany" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Thành Viên" AnchorPane.leftAnchor="390.0" AnchorPane.topAnchor="370.0">
+      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="400.0" layoutY="390.0" onAction="#ClickUser" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Thành Viên" AnchorPane.leftAnchor="390.0" AnchorPane.topAnchor="370.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
