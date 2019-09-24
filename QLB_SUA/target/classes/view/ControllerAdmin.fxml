@@ -36,7 +36,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="553.0" layoutY="180.0" onAction="#ClickProduct" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Product" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="135.0">
+      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="553.0" layoutY="180.0" onAction="#ClickProduct" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Sản Phẩm" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="135.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -48,7 +48,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="223.0" layoutY="399.0" onAction="#ClickCompany" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Company" AnchorPane.topAnchor="390.0">
+      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="223.0" layoutY="399.0" onAction="#ClickCompany" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Nhà Cung Cấp" AnchorPane.topAnchor="390.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -57,7 +57,7 @@
             </ImageView>
          </graphic>
          <font>
-            <Font size="20.0" />
+            <Font size="16.0" />
          </font>
       </JFXButton>
       <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="400.0" layoutY="390.0" onAction="#ClickUser" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Thành Viên" AnchorPane.leftAnchor="390.0" AnchorPane.topAnchor="370.0">

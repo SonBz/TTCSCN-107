@@ -4,6 +4,7 @@ import com.hvktmm.at13.config.MySqlDao;
 import com.hvktmm.at13.model.Company;
 import com.hvktmm.at13.model.User;
 import com.hvktmm.at13.model.UserItem;
+import com.jfoenix.controls.JFXButton;
 import comhvktmm.at13.utils.PassUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -242,6 +243,45 @@ public class UserDao {
             e.printStackTrace();
         }finally {
             try {
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void updateUser(User user){
+        try {
+            connection = getConnection();
+            String sql = "update user set first_name=?,last_name=?,email=? ," +
+                    "phone_number=?, address=?,gender=? where username =?";
+            ptmt = getConnection().prepareStatement(sql);
+            ptmt.setString(1,user.getFirst_name());
+            ptmt.setString(2,user.getLast_name());
+            ptmt.setString(7,user.getUsername());
+            ptmt.setString(3,user.getEmail());
+            ptmt.setString(4,user.getPhone_number());
+            ptmt.setString(5,user.getAddress());
+            ptmt.setString(6,user.getGender());
+            int row = 0;
+            row = ptmt.executeUpdate();
+//            if(row != 0){
+//                check = true;
+//            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
                 if (ptmt != null) {
                     ptmt.close();
                 }

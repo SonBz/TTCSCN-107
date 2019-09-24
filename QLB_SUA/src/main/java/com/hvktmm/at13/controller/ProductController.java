@@ -4,6 +4,7 @@ import com.hvktmm.at13.dao.CompayDao;
 import com.hvktmm.at13.dao.ProductDao;
 import com.hvktmm.at13.model.Product;
 import com.hvktmm.at13.model.ProductItem;
+import com.hvktmm.at13.model.User;
 import com.hvktmm.at13.service.CompanyService;
 import com.hvktmm.at13.service.ProductService;
 import com.jfoenix.controls.JFXComboBox;
@@ -12,16 +13,24 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.TableColumn.CellEditEvent;
+import javafx.scene.control.cell.ComboBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.converter.DefaultStringConverter;
+import javafx.util.converter.DoubleStringConverter;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ProductController implements Initializable {
@@ -29,17 +38,22 @@ public class ProductController implements Initializable {
     @FXML
     private JFXComboBox cbCompany,cbCapacity;
     @FXML
-    private JFXTextField txtName,txtProductType,txtPrice;
+    private JFXTextField txtName,txtProductType,txtPrice,txtSearch;
     @FXML
     private TableView tableView;
     @FXML
-    private TableColumn tbName,tbPrice,tbProductType,tbCapacity,tbCompany;
+    private TableColumn<ProductItem, String> tbName,tbProductType,tbCapacity,tbCompany;
+    @FXML
+    private TableColumn<ProductItem, Double> tbPrice;
+    @FXML
+    private TableColumn tbEdit;
     @FXML
     private TableColumn<ProductItem, String> tbId = new TableColumn<ProductItem, String>();
 
     private ObservableList<ProductItem> product_list = FXCollections.observableArrayList();
     private ObservableList<String> companyName = FXCollections.observableArrayList();
     private ObservableList<String> capacity = FXCollections.observableArrayList("100ml","200ml","300ml");
+    FilteredList<ProductItem> filteredList =new FilteredList<>(product_list, e->true);
     CompayDao compayDao = new CompayDao();
     ProductDao productDao = new ProductDao();
     ProductService companyService = new ProductService();
@@ -55,8 +69,7 @@ public class ProductController implements Initializable {
         cbCapacity.setValue(capacity.get(0));
 
         //show table
-
-        product_list = companyService.ProductNameCompany();
+        product_list.addAll(companyService.ProductNameCompany());
         tbId.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ProductItem, String>, ObservableValue<String>>() {
             @Override
             public ObservableValue<String> call(TableColumn.CellDataFeatures<ProductItem, String> param) {
@@ -68,9 +81,13 @@ public class ProductController implements Initializable {
         tbPrice.setCellValueFactory(new PropertyValueFactory<ProductItem, Double>("price"));
         tbProductType.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("product_type"));
         tbCapacity.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("capacity"));
+        tbCapacity.setCellFactory(ComboBoxTableCell.forTableColumn(new DefaultStringConverter(), capacity));
         tbCompany.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("company"));
+        tbCompany.setCellFactory(ComboBoxTableCell.forTableColumn(new DefaultStringConverter(), companyName));
         tableView.setItems(product_list);
-
+        editTable();
+        tbEdit.setCellFactory(tableColumEdit());
+        tableView.setEditable(true);
 
     }
 
@@ -88,5 +105,89 @@ public class ProductController implements Initializable {
     public  void clickExit(ActionEvent event){
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
     }
+
+    public void searchUser(){
+        txtSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(product ->{
+                if(newValue == null || newValue.isEmpty()){
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if(product.getName().toLowerCase().indexOf(lowerCaseFilter) !=-1 ){
+                    return true;
+                }
+                else if(product.getCapacity().toLowerCase().indexOf(lowerCaseFilter) != -1){
+                    return true;
+                }
+                return false;
+            });
+        });
+        SortedList<ProductItem> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(tableView.comparatorProperty());
+        tableView.setItems(sortedList);
+    }
+
+    public void clickDelete(ActionEvent event){
+        ProductItem productItem = (ProductItem) tableView.getSelectionModel().getSelectedItem();
+        Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("XÁC NHẬN");
+        alert.setHeaderText("Bạn có chắc chắn muốn xóa");
+        alert.setContentText("Tên sản phẩm : "+productItem.getName());
+        ButtonType buttonTypeYes = new ButtonType("YES", ButtonBar.ButtonData.YES);
+        ButtonType buttonTypeNo = new ButtonType("NO", ButtonBar.ButtonData.NO);
+        alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.get() == buttonTypeYes){
+            productDao.deleteProduct(productItem.getName());
+            product_list.removeAll((ProductItem) tableView.getSelectionModel().getSelectedItem());
+        }
+
+    }
+    public void editTable() {
+        tbName.setCellFactory(TextFieldTableCell.forTableColumn());
+        tbName.setOnEditCommit(e -> {
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
+        });
+        tbPrice.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+        tbPrice.setOnEditCommit((CellEditEvent<ProductItem, Double> e) -> {
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setPrice(e.getNewValue());
+        });
+        tbProductType.setCellFactory(TextFieldTableCell.forTableColumn());
+        tbProductType.setOnEditCommit(e -> {
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setProduct_type(e.getNewValue());
+        });
+        tbCapacity.setOnEditCommit(e -> {
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setCapacity(e.getNewValue());
+        });
+        tbCompany.setOnEditCommit(e -> {
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setCompany(e.getNewValue());
+        });
+    }
+
+    protected Callback tableColumEdit() {
+        Callback<TableColumn<ProductItem, String>, TableCell<ProductItem, String>> cellCallback = (pagram) -> {
+            final TableCell<ProductItem, String> tableCell = new TableCell<ProductItem, String>() {
+                @Override
+                public void updateItem(String item, boolean empty) {
+                    if (empty) {
+                        setGraphic(null);
+                        setText(null);
+                    } else {
+                        final Button button = new Button("Edit");
+                        button.setOnAction(event -> {
+                            ProductItem product = getTableView().getItems().get(getIndex());
+                            System.out.println(product.getName());
+//                            userDao.updateUser(user);
+                        });
+                        setGraphic(button);
+                        setText(null);
+                    }
+                }
+            };
+            return tableCell;
+        };
+        return cellCallback;
+    }
+
 
 }

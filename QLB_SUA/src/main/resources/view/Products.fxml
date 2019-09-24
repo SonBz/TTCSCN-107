@@ -160,14 +160,16 @@
                               <TableColumn fx:id="tbProductType" prefWidth="139.0" text="Loại Sữa" />
                               <TableColumn fx:id="tbCapacity" prefWidth="107.0" text="Thể Tích" />
                               <TableColumn fx:id="tbCompany" prefWidth="181.0" text="Nhà Cung Cấp" />
+                              <TableColumn fx:id="tbEdit" prefWidth="94.0" text="Edit" />
                           </columns>
                         </TableView>
-                        <JFXButton layoutX="579.0" layoutY="411.0" onAction="#clickExit" prefHeight="25.0" prefWidth="69.0" styleClass="contronlerbutton" text="Thoát" />
-                        <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="81.0" layoutY="91.0" prefHeight="25.0" prefWidth="202.0" promptText="Tìm kiếm" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="432.0" AnchorPane.topAnchor="99.0">
+                        <JFXButton layoutX="579.0" layoutY="406.0" onAction="#clickExit" prefHeight="32.0" prefWidth="69.0" styleClass="contronlerbutton" text="Thoát" />
+                        <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="81.0" layoutY="91.0" onInputMethodTextChanged="#searchUser" onKeyReleased="#searchUser" prefHeight="25.0" prefWidth="202.0" promptText="Tìm kiếm" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="432.0" AnchorPane.topAnchor="99.0">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
+                        <JFXButton layoutX="473.0" layoutY="405.0" onAction="#clickDelete" prefHeight="34.0" prefWidth="68.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Xóa" />
                      </children></AnchorPane>
               </content>
             </Tab>

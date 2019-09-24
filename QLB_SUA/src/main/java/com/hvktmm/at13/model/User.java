@@ -1,5 +1,7 @@
 package com.hvktmm.at13.model;
 
+import com.jfoenix.controls.JFXButton;
+
 import java.util.Date;
 
 public class User {
@@ -14,6 +16,7 @@ public class User {
     private String address;
     private Date date_of_birth;
     private String gender;
+    private JFXButton edit;
 
     public User(String first_name, String last_name, String username, String password, String email, String phone_number, String address, Date date_of_birth, String gender) {
         this.first_name = first_name;
@@ -26,7 +29,7 @@ public class User {
         this.date_of_birth = date_of_birth;
         this.gender = gender;
     }
-    public User(String first_name, String last_name, String username, String email, String phone_number, String address, Date date_of_birth, String gender) {
+    public User(String first_name, String last_name, String username, String email, String phone_number, String address, Date date_of_birth, String gender, JFXButton edit) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.username = username;
@@ -35,8 +38,18 @@ public class User {
         this.address = address;
         this.date_of_birth = date_of_birth;
         this.gender = gender;
+        this.edit = edit;
+
     }
     public User() {
+    }
+
+    public JFXButton getEdit() {
+        return edit;
+    }
+
+    public void setEdit(JFXButton edit) {
+        this.edit = edit;
     }
 
     public String getFirst_name() {

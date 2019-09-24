@@ -19,6 +19,12 @@
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
 }
+/*#tbEdit{*/
+/*    -fx-background-color: #e6fff8;*/
+/*    -fx-border-color: #3F729B;*/
+/*    -fx-border-radius: 20px;*/
+/*    -fx-background-radius: 20px;*/
+/*}*/
 .company-text{
     -fx-text-fill: #FFFFFF;
     -fx-font-size: 20px;

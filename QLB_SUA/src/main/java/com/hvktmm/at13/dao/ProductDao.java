@@ -100,4 +100,61 @@ public class ProductDao {
         return null;
     }
 
+    public void deleteProduct(String name){
+        try {
+            connection = getConnection();
+            String sql="delete from product where name=?";
+            ptmt=connection.prepareStatement(sql);
+            ptmt.setString(1,name);
+            ptmt.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void updateProduct(Product product){
+        try {
+            connection=getConnection();
+            String sql="update product set name=?,price=?,capacity,product_type,company_id) values (?,?,?,?,?)";
+            ptmt=connection.prepareStatement(sql);
+            ptmt.setString(1,product.getName());
+            ptmt.setDouble(2,product.getPrice());
+            ptmt.setString(3,product.getCapacity());
+            ptmt.setString(4,product.getProduct_type());
+            ptmt.setInt(5,product.getCompany_id());
+            ptmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

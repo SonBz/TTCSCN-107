@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DataUtils {
+public class DateUtils {
     SimpleDateFormat FD=new SimpleDateFormat("yyyyMMdd");
     SimpleDateFormat full=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     SimpleDateFormat full1=new SimpleDateFormat("yyyy-MM-dd HH:mm");
