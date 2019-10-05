@@ -24,7 +24,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="390.0" layoutY="211.0" onAction="#ClickImportWarehouse" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Xuất Kho" AnchorPane.leftAnchor="390.0" AnchorPane.topAnchor="150.0">
+      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="390.0" layoutY="211.0" onAction="#ClickExportWarehouse" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Xuất Kho" AnchorPane.leftAnchor="390.0" AnchorPane.topAnchor="150.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>

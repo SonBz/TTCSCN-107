@@ -27,6 +27,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.converter.DefaultStringConverter;
 import javafx.util.converter.DoubleStringConverter;
+import javafx.util.converter.LongStringConverter;
 
 import java.io.IOException;
 import java.net.URL;
@@ -44,7 +45,7 @@ public class ProductController implements Initializable {
     @FXML
     private TableColumn<ProductItem, String> tbName,tbProductType,tbCapacity,tbCompany;
     @FXML
-    private TableColumn<ProductItem, Double> tbPrice;
+    private TableColumn<ProductItem, Long> tbPrice;
     @FXML
     private TableColumn tbEdit;
     @FXML
@@ -78,7 +79,7 @@ public class ProductController implements Initializable {
         });
         tbId.setSortable(false);
         tbName.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("name"));
-        tbPrice.setCellValueFactory(new PropertyValueFactory<ProductItem, Double>("price"));
+        tbPrice.setCellValueFactory(new PropertyValueFactory<ProductItem, Long>("price"));
         tbProductType.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("product_type"));
         tbCapacity.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("capacity"));
         tbCapacity.setCellFactory(ComboBoxTableCell.forTableColumn(new DefaultStringConverter(), capacity));
@@ -94,7 +95,7 @@ public class ProductController implements Initializable {
     public void clickSave(ActionEvent event) throws IOException {
         String name = String.valueOf(cbCompany.getValue());
         int idCom = compayDao.idCompany(name);
-        Product product = new Product(txtName.getText(),Double.valueOf(txtPrice.getText()),
+        Product product = new Product(txtName.getText(),Long.valueOf(txtPrice.getText()),
                             String.valueOf(cbCapacity.getValue()),txtProductType.getText(),idCom);
 
         productDao.insert(product);
@@ -148,8 +149,9 @@ public class ProductController implements Initializable {
         tbName.setOnEditCommit(e -> {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
         });
-        tbPrice.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
-        tbPrice.setOnEditCommit((CellEditEvent<ProductItem, Double> e) -> {
+        tbPrice.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+
+        tbPrice.setOnEditCommit((CellEditEvent<ProductItem, Long> e) -> {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setPrice(e.getNewValue());
         });
         tbProductType.setCellFactory(TextFieldTableCell.forTableColumn());

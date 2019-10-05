@@ -1,17 +1,27 @@
 package com.hvktmm.at13.model;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+import jdk.nashorn.internal.objects.annotations.Setter;
+
 public class Product {
-    private int id;
-    private String name;
-    private Double price;
-    private String capacity;
-    private String product_type;
-    private int company_id;
+    protected int id;
+    protected String name;
+    protected long price;
+    protected String capacity;
+    protected String product_type;
+    protected int company_id;
+    protected int amount;
 
     public Product() {
     }
 
-    public Product(String name, Double price, String capacity, String product_type, int company_id) {
+    public Product(int id, long price, int amount) {
+        this.id = id;
+        this.price = price;
+        this.amount = amount;
+    }
+
+    public Product(String name, long price, String capacity, String product_type, int company_id) {
         this.name = name;
         this.price = price;
         this.capacity = capacity;
@@ -27,14 +37,6 @@ public class Product {
         this.id = id;
     }
 
-    public String getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(String capacity) {
-        this.capacity = capacity;
-    }
-
     public String getName() {
         return name;
     }
@@ -43,12 +45,20 @@ public class Product {
         this.name = name;
     }
 
-    public Double getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(long price) {
         this.price = price;
+    }
+
+    public String getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(String capacity) {
+        this.capacity = capacity;
     }
 
     public String getProduct_type() {
@@ -65,5 +75,13 @@ public class Product {
 
     public void setCompany_id(int company_id) {
         this.company_id = company_id;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }

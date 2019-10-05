@@ -56,6 +56,9 @@ public class ControllerAdmin implements Initializable {
     public void ClickImportWarehouse(ActionEvent event) throws Exception{
         Redict("/view/ImportWarehouse.fxml","Nhập Kho");
     }
+    public void ClickExportWarehouse(ActionEvent event) throws Exception{
+        Redict("/view/ExportWarehouse.fxml","Hóa Đơn");
+    }
     public void ClickProduct(ActionEvent event) throws Exception{
         Redict("/view/Products.fxml","Sản Phẩm");
     }

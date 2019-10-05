@@ -18,7 +18,7 @@ public class ProductService {
         product_list = productDao.ProductList();
         for(int i=0; i< product_list.size();i++){
             String name =  product_list.get(i).getName();
-            Double price = product_list.get(i).getPrice();
+            Long price = product_list.get(i).getPrice();
             String capacity = product_list.get(i).getCapacity();
             String  product_type = product_list.get(i).getProduct_type();
             String company = compayDao.company_name(product_list.get(i).getCompany_id());

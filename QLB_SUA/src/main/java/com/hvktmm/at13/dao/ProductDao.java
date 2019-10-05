@@ -71,7 +71,7 @@ public class ProductDao {
                 product=new Product();
                 product.setId(resultSet.getInt("id"));
                 product.setName(resultSet.getString("name"));
-                product.setPrice(resultSet.getDouble("price"));
+                product.setPrice(resultSet.getLong("price"));
                 product.setCapacity(resultSet.getString("capacity"));
                 product.setProduct_type(resultSet.getString("product_type"));
                 product.setCompany_id((resultSet.getInt("company_id")));
@@ -128,7 +128,7 @@ public class ProductDao {
     public void updateProduct(Product product){
         try {
             connection=getConnection();
-            String sql="update product set name=?,price=?,capacity,product_type,company_id) values (?,?,?,?,?)";
+            String sql="update product set name=?,price=?,capacity=?,product_type=?,company_id=?)";
             ptmt=connection.prepareStatement(sql);
             ptmt.setString(1,product.getName());
             ptmt.setDouble(2,product.getPrice());
@@ -156,5 +156,138 @@ public class ProductDao {
             }
         }
     }
+    public void updateAmount(int id, int amount){
+        try {
+            connection=getConnection();
+            String sql="update product set amount=? where id=?  ";
+            ptmt=connection.prepareStatement(sql);
+            ptmt.setInt(1,amount);
+            ptmt.setInt(2,id);
+            ptmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public String productName(int id){
+        String name= "";
+        try {
+            connection = getConnection();
+            String sql="select name from product where id=?";
+            ptmt=connection.prepareStatement(sql);
+            ptmt.setInt(1,id);
+            resultSet=ptmt.executeQuery();
+            while (resultSet.next()){
+                name = resultSet.getString("name");
+            }
+            return  name;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return name;
 
+    }
+
+    public ObservableList<Product> idProduct(String name){
+        Product product=null;
+        ObservableList<Product> list = FXCollections.observableArrayList();
+        try {
+            connection = getConnection();
+            String sql="select id, price,amount from product where name=?";
+            ptmt=connection.prepareStatement(sql);
+            ptmt.setString(1,name);
+            resultSet=ptmt.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                long price = resultSet.getLong("price");
+                int amount = resultSet.getInt("amount");
+                product = new Product(id,price,amount);
+                list.add(product);
+            }
+            return  list;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    public ObservableList<String> NameProduct(){
+        try {
+            connection = getConnection();
+            String sql="select id,name from product";
+            ptmt=connection.prepareStatement(sql);
+            resultSet=ptmt.executeQuery();
+            ObservableList<String> list = FXCollections.observableArrayList();
+            while (resultSet.next()){
+                list.add(resultSet.getString("name"));
+            }
+            return  list;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
 }

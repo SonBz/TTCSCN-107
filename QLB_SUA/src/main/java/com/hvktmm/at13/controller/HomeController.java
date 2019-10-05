@@ -18,6 +18,7 @@ public class HomeController {
     private JFXTextField txtUserName;
     @FXML
     private JFXPasswordField txtPassword;
+    public static int userId = 0;
 
 
     public void clickLogin(ActionEvent event) throws Exception{
@@ -25,7 +26,9 @@ public class HomeController {
         String pass = txtPassword.getText();
         UserDao userDao = new UserDao();
         User user = userDao.login(userName,pass);
+
         if (user!=null && user.getIs_staff()==1){
+            userId = user.getId();
             Stage stage= (Stage) btnLogin.getScene().getWindow();
             Parent parent= FXMLLoader.load(getClass().getResource("/view/ControllerAdmin.fxml"));
             Scene scene=new Scene(parent);
@@ -33,6 +36,7 @@ public class HomeController {
             stage.show();
         }
         else if(user!=null && user.getIs_staff()==0){
+            userId = user.getId();
             Stage stage= (Stage) btnLogin.getScene().getWindow();
             Parent parent= FXMLLoader.load(getClass().getResource("/view/Controller.fxml"));
             Scene scene=new Scene(parent);

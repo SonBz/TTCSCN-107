@@ -1,18 +1,19 @@
 package com.hvktmm.at13.model;
 
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class ProductItem {
     private SimpleStringProperty name;
-    private SimpleDoubleProperty price;
+    private SimpleLongProperty price;
     private SimpleStringProperty capacity;
     private SimpleStringProperty product_type;
     private SimpleStringProperty company;
 
-    public ProductItem(String name,Double price, String capacity, String product_type, String company) {
+    public ProductItem(String name,Long price, String capacity, String product_type, String company) {
         this.name = new SimpleStringProperty(name);
-        this.price = new SimpleDoubleProperty(price);
+        this.price = new SimpleLongProperty(price);
         this.capacity = new SimpleStringProperty(capacity);
         this.product_type = new SimpleStringProperty(product_type);
         this.company = new SimpleStringProperty(company);
@@ -34,11 +35,11 @@ public class ProductItem {
         return price.get();
     }
 
-    public SimpleDoubleProperty priceProperty() {
+    public SimpleLongProperty priceProperty() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(long price) {
         this.price.set(price);
     }
 
