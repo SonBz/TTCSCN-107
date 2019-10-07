@@ -3,6 +3,7 @@ package com.hvktmm.at13.dao;
 import com.hvktmm.at13.config.MySqlDao;
 import com.hvktmm.at13.model.Company;
 import com.hvktmm.at13.model.Product;
+import com.hvktmm.at13.model.ProductItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -23,13 +24,14 @@ public class ProductDao {
 //        MemberDao memberDao=new MemberDao();
         try {
             connection=getConnection();
-            String sql="insert into product(name,price,capacity,product_type,company_id) values (?,?,?,?,?)";
+            String sql="insert into product(name,price,capacity,product_type,company_id, amount) values (?,?,?,?,?,?)";
             ptmt=connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ptmt.setString(1,product.getName());
             ptmt.setDouble(2,product.getPrice());
             ptmt.setString(3,product.getCapacity());
             ptmt.setString(4,product.getProduct_type());
             ptmt.setInt(5,product.getCompany_id());
+            ptmt.setInt(6, product.getAmount());
             ptmt.execute();
             ResultSet rs = ptmt.getGeneratedKeys();
             if (rs.next()) {
@@ -75,6 +77,7 @@ public class ProductDao {
                 product.setCapacity(resultSet.getString("capacity"));
                 product.setProduct_type(resultSet.getString("product_type"));
                 product.setCompany_id((resultSet.getInt("company_id")));
+                product.setAmount(resultSet.getInt("amount"));
                 list.add(product);
             }
             return list;
@@ -128,13 +131,14 @@ public class ProductDao {
     public void updateProduct(Product product){
         try {
             connection=getConnection();
-            String sql="update product set name=?,price=?,capacity=?,product_type=?,company_id=?)";
+            String sql="update product set name=?,price=?,capacity=?,product_type=?,company_id=? where id=?";
             ptmt=connection.prepareStatement(sql);
             ptmt.setString(1,product.getName());
             ptmt.setDouble(2,product.getPrice());
             ptmt.setString(3,product.getCapacity());
             ptmt.setString(4,product.getProduct_type());
             ptmt.setInt(5,product.getCompany_id());
+            ptmt.setInt(6,product.getId());
             ptmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

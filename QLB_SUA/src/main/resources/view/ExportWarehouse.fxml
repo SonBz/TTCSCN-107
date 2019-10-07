@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.SplitPane?>
@@ -47,16 +48,16 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="583.0">
                      <children>
                         <JFXTextField fx:id="txtId" editable="false" labelFloat="true" layoutX="14.0" layoutY="33.0" prefHeight="25.0" prefWidth="36.0" promptText="MKH" />
-                        <VBox layoutX="14.0" layoutY="99.0" prefHeight="139.0" prefWidth="215.0">
+                        <VBox layoutX="14.0" layoutY="99.0" prefHeight="185.0" prefWidth="215.0">
                            <children>
                               <JFXTextField fx:id="txtName" labelFloat="true" prefHeight="30.0" prefWidth="184.0" promptText="Tên khách hàng">
                                  <VBox.margin>
-                                    <Insets bottom="20.0" top="2.0" />
+                                    <Insets bottom="40.0" top="2.0" />
                                  </VBox.margin>
                               </JFXTextField>
                               <JFXTextField fx:id="txtTell" labelFloat="true" prefHeight="30.0" prefWidth="184.0" promptText="Số Điên Thoại">
                                  <VBox.margin>
-                                    <Insets bottom="20.0" />
+                                    <Insets bottom="40.0" />
                                  </VBox.margin>
                               </JFXTextField>
                               <JFXTextField fx:id="txtAddress" labelFloat="true" prefHeight="30.0" prefWidth="184.0" promptText="Địa Chỉ" />
@@ -79,8 +80,9 @@
                         </JFXButton>
                         <JFXButton layoutX="465.0" layoutY="377.0" onAction="#ClickAddBill" text="Tạo Hóa Đơn" />
                         <JFXButton layoutX="578.0" layoutY="377.0" onAction="#ClickExit" text="Thoát" />
-                        <JFXButton layoutX="560.0" layoutY="246.0" text="Xóa" />
+                        <JFXButton layoutX="560.0" layoutY="246.0" onAction="#ClickDeleteProduct" text="Xóa" />
                         <JFXTextField fx:id="txtTotalMoney" labelFloat="true" layoutX="275.0" layoutY="246.0" promptText="Tổng Tiền" />
+                        <JFXTextArea fx:id="txtNote" labelFloat="true" layoutX="14.0" layoutY="318.0" prefHeight="84.0" prefWidth="308.0" promptText="Ghi Chú" />
                      </children>
                   </AnchorPane>
               </items>

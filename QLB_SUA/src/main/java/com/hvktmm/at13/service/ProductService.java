@@ -17,13 +17,23 @@ public class ProductService {
 
         product_list = productDao.ProductList();
         for(int i=0; i< product_list.size();i++){
+            int id = product_list.get(i).getId();
             String name =  product_list.get(i).getName();
             Long price = product_list.get(i).getPrice();
             String capacity = product_list.get(i).getCapacity();
             String  product_type = product_list.get(i).getProduct_type();
-            String company = compayDao.company_name(product_list.get(i).getCompany_id());
-            ProductItem productItem = new ProductItem(name,price,capacity,product_type,company);
-            data.addAll(productItem);
+            int company_id = product_list.get(i).getCompany_id();
+            String company = compayDao.company_name(company_id);
+            int amount = product_list.get(i).getAmount();
+            if(amount == 0){
+                String strAmount = "hết hàng";
+                ProductItem productItem = new ProductItem(id,company_id,name,price,capacity,product_type,company,strAmount);
+                data.addAll(productItem);
+            }else {
+                String strAmount = String.valueOf(amount);
+                ProductItem productItem = new ProductItem(id,company_id,name,price,capacity,product_type,company,strAmount);
+                data.addAll(productItem);
+            }
 
         }
         return data;

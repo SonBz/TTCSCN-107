@@ -39,11 +39,11 @@ public class ProductController implements Initializable {
     @FXML
     private JFXComboBox cbCompany,cbCapacity;
     @FXML
-    private JFXTextField txtName,txtProductType,txtPrice,txtSearch;
+    private JFXTextField txtName,txtProductType,txtPrice,txtSearch,txtAmount;
     @FXML
     private TableView tableView;
     @FXML
-    private TableColumn<ProductItem, String> tbName,tbProductType,tbCapacity,tbCompany;
+    private TableColumn<ProductItem, String> tbName,tbProductType,tbCapacity,tbCompany,tbAmount;
     @FXML
     private TableColumn<ProductItem, Long> tbPrice;
     @FXML
@@ -85,6 +85,7 @@ public class ProductController implements Initializable {
         tbCapacity.setCellFactory(ComboBoxTableCell.forTableColumn(new DefaultStringConverter(), capacity));
         tbCompany.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("company"));
         tbCompany.setCellFactory(ComboBoxTableCell.forTableColumn(new DefaultStringConverter(), companyName));
+        tbAmount.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("amount"));
         tableView.setItems(product_list);
         editTable();
         tbEdit.setCellFactory(tableColumEdit());
@@ -96,7 +97,7 @@ public class ProductController implements Initializable {
         String name = String.valueOf(cbCompany.getValue());
         int idCom = compayDao.idCompany(name);
         Product product = new Product(txtName.getText(),Long.valueOf(txtPrice.getText()),
-                            String.valueOf(cbCapacity.getValue()),txtProductType.getText(),idCom);
+                            String.valueOf(cbCapacity.getValue()),txtProductType.getText(),idCom, Integer.valueOf(txtAmount.getText()));
 
         productDao.insert(product);
         product_list = companyService.ProductNameCompany();
@@ -177,9 +178,10 @@ public class ProductController implements Initializable {
                     } else {
                         final Button button = new Button("Edit");
                         button.setOnAction(event -> {
-                            ProductItem product = getTableView().getItems().get(getIndex());
-                            System.out.println(product.getName());
-//                            userDao.updateUser(user);
+                            ProductItem productItem = getTableView().getItems().get(getIndex());
+                            Product product = new Product(productItem.getName(),productItem.getPrice(),productItem.getCapacity(),
+                                                productItem.getProduct_type(),productItem.getCompany_id());
+                            productDao.updateProduct(product);
                         });
                         setGraphic(button);
                         setText(null);

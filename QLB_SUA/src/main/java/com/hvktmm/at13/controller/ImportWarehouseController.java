@@ -53,7 +53,7 @@ public class ImportWarehouseController implements Initializable {
         int updateAmount = product.get(0).getAmount() + Integer.valueOf(txtAmount.getText());
         TransactionHistory importData = new TransactionHistory(Integer.valueOf(txtAmount.getText()),
                                                 txtNote.getText(),idProduct,HomeController.userId);
-        Boolean check = dao.insertImport(importData);
+        Boolean check = dao.insertImport(importData,1);
         if (check=true){
             productDao.updateAmount(idProduct,updateAmount);
         }else {

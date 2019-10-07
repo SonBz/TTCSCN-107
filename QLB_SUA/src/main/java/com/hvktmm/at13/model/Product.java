@@ -21,6 +21,14 @@ public class Product {
         this.amount = amount;
     }
 
+    public Product(String name, long price, String capacity, String product_type, int company_id, int amount) {
+        this.name = name;
+        this.price = price;
+        this.capacity = capacity;
+        this.product_type = product_type;
+        this.company_id = company_id;
+        this.amount = amount;
+    }
     public Product(String name, long price, String capacity, String product_type, int company_id) {
         this.name = name;
         this.price = price;

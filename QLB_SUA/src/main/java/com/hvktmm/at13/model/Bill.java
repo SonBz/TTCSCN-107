@@ -7,11 +7,10 @@ public class Bill {
     private int id;
     private Date dateTrading;
     private String note;
-    private double total_money;
+    private long total_money;
     private int userId,customerId;
 
-    public Bill(Date dateTrading, String note, double total_money, int userId, int customerId) {
-        this.dateTrading = dateTrading;
+    public Bill(String note, long total_money, int userId, int customerId) {
         this.note = note;
         this.total_money = total_money;
         this.userId = userId;
@@ -45,11 +44,11 @@ public class Bill {
         this.note = note;
     }
 
-    public double getTotal_money() {
+    public long getTotal_money() {
         return total_money;
     }
 
-    public void setTotal_money(double total_money) {
+    public void setTotal_money(long total_money) {
         this.total_money = total_money;
     }
 

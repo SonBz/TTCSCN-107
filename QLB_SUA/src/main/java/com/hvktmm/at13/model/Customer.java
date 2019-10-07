@@ -9,6 +9,15 @@ public class Customer {
     private int status;
     private int numberOf;
 
+    public Customer() {
+    }
+
+    public Customer(String name, String address, String phoneNumber, long moneyTotal) {
+        this.name = name;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.moneyTotal = moneyTotal;
+    }
 
     public int getId() {
         return id;

@@ -19,21 +19,40 @@ public class TransactionHistoryDao {
         con= MySqlDao.getInstance().getConnection();
         return con;
     }
-
-    public Boolean insertImport(TransactionHistory transactionHistory){
+    // 1 history import
+    // 0 history export
+    public Boolean insertImport(TransactionHistory transactionHistory, int idx){
         Boolean check = false;
-
         try {
             connection=getConnection();
-            String sql="insert into transaction_history(amount,date_import,note,product_id,user_id) values (?,?,?,?,?)";
-            ptmt=connection.prepareStatement(sql);
-            ptmt.setInt(1,transactionHistory.getAumount());
-            ptmt.setTimestamp(2, timestamp);
-            ptmt.setString(3,transactionHistory.getNote());
-            ptmt.setInt(4,transactionHistory.getProductId());
-            ptmt.setInt(5,transactionHistory.getUserId());
-            ptmt.executeUpdate();
-            return check=true;
+            if(idx == 1){
+                String sql="insert into transaction_history(amount,date_import,note,product_id,user_id) values (?,?,?,?,?)";
+                ptmt=connection.prepareStatement(sql);
+                ptmt.setInt(1,transactionHistory.getAumount());
+                ptmt.setTimestamp(2, timestamp);
+                ptmt.setString(3,transactionHistory.getNote());
+                ptmt.setInt(4,transactionHistory.getProductId());
+                ptmt.setInt(5,transactionHistory.getUserId());
+                int row=0;
+                row=ptmt.executeUpdate();
+                if (row!=0){
+                    check=true;
+                }
+            }else {
+                String sql="insert into transaction_history(amount,date_export,note,product_id,user_id) values (?,?,?,?,?)";
+                ptmt=connection.prepareStatement(sql);
+                ptmt.setInt(1,transactionHistory.getAumount());
+                ptmt.setTimestamp(2, timestamp);
+                ptmt.setString(3,transactionHistory.getNote());
+                ptmt.setInt(4,transactionHistory.getProductId());
+                ptmt.setInt(5,transactionHistory.getUserId());
+                int row=0;
+                row=ptmt.executeUpdate();
+                if (row!=0){
+                    check=true;
+                }
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

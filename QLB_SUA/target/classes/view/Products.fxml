@@ -17,34 +17,34 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="499.0" prefWidth="715.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ProductController">
+<AnchorPane prefHeight="499.0" prefWidth="801.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ProductController">
    <children>
       <JFXTabPane layoutX="137.0" layoutY="88.0" prefHeight="499.0" prefWidth="715.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <tabs>
             <Tab text="Thêm Sản Phẩm">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="521.0" style="-fx-background-color: #FFFFFF;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF;">
                      <children>
                         <AnchorPane prefHeight="52.0" prefWidth="600.0" style="-fx-background-color: #A4C639;" AnchorPane.bottomAnchor="380.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="430.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="483.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/cow_ri.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="254.0" layoutY="26.0" prefHeight="30.0" prefWidth="162.0" text="Thêm Sản Phẩm" textFill="WHITE">
+                              <Label layoutX="307.0" layoutY="26.0" prefHeight="30.0" prefWidth="162.0" text="Thêm Sản Phẩm" textFill="WHITE">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="56.0" fitWidth="82.0" layoutX="162.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="56.0" fitWidth="82.0" layoutX="233.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/cow.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </AnchorPane>
-                        <VBox layoutX="25.0" layoutY="77.0" prefHeight="177.0" prefWidth="262.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="120.0">
+                        <VBox layoutX="25.0" layoutY="77.0" prefHeight="177.0" prefWidth="267.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="479.0" AnchorPane.topAnchor="120.0">
                            <children>
                               <JFXTextField fx:id="txtName" blendMode="SRC_ATOP" depthTest="ENABLE" focusColor="#4c75f2" labelFloat="true" prefHeight="25.0" prefWidth="176.0" promptText="Tên Sữa" styleClass="text-field" unFocusColor="#73c342">
                                  <VBox.margin>
@@ -84,7 +84,7 @@
                               <Insets top="10.0" />
                            </padding>
                         </VBox>
-                        <VBox layoutX="328.0" layoutY="93.0" prefHeight="178.0" prefWidth="241.0" stylesheets="@../style/styles.css" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="140.0">
+                        <VBox layoutX="423.0" layoutY="110.0" prefHeight="197.0" prefWidth="230.0" stylesheets="@../style/styles.css" AnchorPane.leftAnchor="423.0" AnchorPane.rightAnchor="193.0" AnchorPane.topAnchor="110.0">
                            <children>
                               <Label contentDisplay="RIGHT" graphicTextGap="0.0" prefHeight="27.0" prefWidth="242.0" text="Hãng :">
                                  <font>
@@ -94,7 +94,7 @@
                                     <Insets />
                                  </VBox.margin>
                               </Label>
-                              <JFXComboBox fx:id="cbCompany" prefHeight="27.0" prefWidth="212.0">
+                              <JFXComboBox fx:id="cbCompany" prefHeight="27.0" prefWidth="235.0">
                                  <VBox.margin>
                                     <Insets bottom="30.0" />
                                  </VBox.margin>
@@ -107,7 +107,15 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <JFXComboBox fx:id="cbCapacity" prefHeight="27.0" prefWidth="215.0" />
+                              <JFXComboBox fx:id="cbCapacity" prefHeight="27.0" prefWidth="231.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin></JFXComboBox>
+                              <JFXTextField fx:id="txtAmount" labelFloat="true" prefHeight="34.0" prefWidth="225.0" promptText="Số Lượng">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
                            </children>
                         </VBox>
                         <JFXButton layoutX="280.0" layoutY="343.0" onAction="#clickSave" prefHeight="33.0" prefWidth="64.0" styleClass="contronlerbutton" text="Lưu">
@@ -126,7 +134,7 @@
             </Tab>
             <Tab text="Sản Phẩm">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="462.0" prefWidth="824.0">
                      <children>
                         <AnchorPane prefHeight="94.0" prefWidth="600.0" style="-fx-background-color: #A4C639;" AnchorPane.bottomAnchor="380.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
@@ -152,24 +160,25 @@
                               <Image url="@../img/search.png" />
                            </image>
                         </ImageView>
-                        <TableView fx:id="tableView" layoutY="137.0" prefHeight="255.0" prefWidth="715.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="137.0">
+                        <TableView fx:id="tableView" layoutY="136.0" prefHeight="255.0" prefWidth="801.0" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="136.0">
                           <columns>
-                            <TableColumn fx:id="tbId" prefWidth="75.0" text="STT" />
-                            <TableColumn fx:id="tbName" prefWidth="149.0" text="Tên" />
-                              <TableColumn fx:id="tbPrice" prefWidth="63.0" text="Giá" />
-                              <TableColumn fx:id="tbProductType" prefWidth="139.0" text="Loại Sữa" />
-                              <TableColumn fx:id="tbCapacity" prefWidth="107.0" text="Thể Tích" />
-                              <TableColumn fx:id="tbCompany" prefWidth="181.0" text="Nhà Cung Cấp" />
-                              <TableColumn fx:id="tbEdit" prefWidth="94.0" text="Edit" />
+                            <TableColumn fx:id="tbId" prefWidth="49.0" text="STT" />
+                            <TableColumn fx:id="tbName" prefWidth="141.0" text="Tên" />
+                              <TableColumn fx:id="tbPrice" prefWidth="97.0" text="Giá" />
+                              <TableColumn fx:id="tbProductType" prefWidth="115.0" text="Loại Sữa" />
+                              <TableColumn fx:id="tbCapacity" prefWidth="96.0" text="Thể Tích" />
+                              <TableColumn fx:id="tbCompany" prefWidth="130.0" text="Nhà Cung Cấp" />
+                              <TableColumn fx:id="tbAmount" prefWidth="96.0" text="Số Lượng" />
+                              <TableColumn fx:id="tbEdit" prefWidth="77.0" text="Edit" />
                           </columns>
                         </TableView>
-                        <JFXButton layoutX="579.0" layoutY="406.0" onAction="#clickExit" prefHeight="32.0" prefWidth="69.0" styleClass="contronlerbutton" text="Thoát" />
+                        <JFXButton layoutX="467.0" layoutY="406.0" onAction="#clickExit" prefHeight="32.0" prefWidth="69.0" styleClass="contronlerbutton" text="Thoát" />
                         <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="81.0" layoutY="91.0" onInputMethodTextChanged="#searchUser" onKeyReleased="#searchUser" prefHeight="25.0" prefWidth="202.0" promptText="Tìm kiếm" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="432.0" AnchorPane.topAnchor="99.0">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton layoutX="473.0" layoutY="405.0" onAction="#clickDelete" prefHeight="34.0" prefWidth="68.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Xóa" />
+                        <JFXButton layoutX="309.0" layoutY="405.0" onAction="#clickDelete" prefHeight="34.0" prefWidth="68.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Xóa" />
                      </children></AnchorPane>
               </content>
             </Tab>
