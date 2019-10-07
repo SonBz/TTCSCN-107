@@ -8,29 +8,39 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="521.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ExportWarehouseController">
+<AnchorPane prefHeight="521.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ExportWarehouseController">
    <children>
-      <AnchorPane prefHeight="77.0" prefWidth="789.0" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="77.0" prefWidth="789.0" style="-fx-background-color: #ffff99;" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Text layoutX="300.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hóa đơn" textAlignment="CENTER" wrappingWidth="147.966796875">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
+             <ImageView fitHeight="55.0" fitWidth="70.0" layoutX="245.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@../img/bill.png" />
+                 </image>
+             </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="77.0" prefHeight="494.0" prefWidth="761.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="77.0">
          <children>
             <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #00A1F1;">
                      <children>
-                        <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="-1.0" layoutY="36.0" onInputMethodTextChanged="#searchCustomer" onKeyReleased="#searchCustomer" prefHeight="30.0" prefWidth="232.0" promptText="Nhập tên khác hàng" AnchorPane.bottomAnchor="370.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0" />
+                        <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="-1.0" layoutY="36.0" onInputMethodTextChanged="#searchCustomer" onKeyReleased="#searchCustomer" prefHeight="30.0" prefWidth="232.0" promptText="Nhập tên khác hàng" AnchorPane.bottomAnchor="370.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></JFXTextField>
                         <TableView fx:id="tbSearchCus" layoutX="7.0" layoutY="72.0" onMouseClicked="#onTableClick" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="72.0">
                           <columns>
                             <TableColumn fx:id="tbcId" prefWidth="43.0" text="MKH" />
@@ -38,14 +48,14 @@
                               <TableColumn fx:id="tbcCusTell" maxWidth="191.0" minWidth="-1.0" prefWidth="149.0" text="SDT" />
                           </columns>
                         </TableView>
-                        <Text layoutX="104.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm kiếm Khác Hàng" textAlignment="CENTER" wrappingWidth="131.13671875" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="14.86328125" AnchorPane.topAnchor="8.0">
+                        <Text layoutX="77.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm kiếm Khác Hàng" textAlignment="CENTER" wrappingWidth="131.13671875" AnchorPane.leftAnchor="77.0" AnchorPane.rightAnchor="76.86328125" AnchorPane.topAnchor="3.892578125">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Text>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="583.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="583.0" style="-fx-background-color: #66ccff;">
                      <children>
                         <JFXTextField fx:id="txtId" editable="false" labelFloat="true" layoutX="14.0" layoutY="33.0" prefHeight="25.0" prefWidth="36.0" promptText="MKH" />
                         <VBox layoutX="14.0" layoutY="99.0" prefHeight="185.0" prefWidth="215.0">
