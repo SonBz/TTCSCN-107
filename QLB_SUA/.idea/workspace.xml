@@ -3,6 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="222b311c-b3ac-4b38-ba51-eb64bfbf5e04" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/ControllerAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/ControllerAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/ExportWarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/ExportWarehouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/dao/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/dao/DetailBillDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/dao/DetailBillDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ControllerAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ControllerAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ExportWarehouse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ExportWarehouse.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ImportWarehouse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ImportWarehouse.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Products.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Products.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/ControllerAdmin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/ControllerAdmin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/ControllerAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/ControllerAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/ExportWarehouseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/ExportWarehouseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/dao/CustomerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/dao/CustomerDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/dao/DetailBillDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/dao/DetailBillDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ControllerAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ControllerAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ExportWarehouse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ExportWarehouse.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ImportWarehouse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ImportWarehouse.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Products.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Products.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +78,7 @@
   <component name="ProjectId" id="1R5BrR3NLsxjiY2W9buiEgDd1Jk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -190,7 +214,9 @@
       <workItem from="1570202141414" duration="12227000" />
       <workItem from="1570243251174" duration="14896000" />
       <workItem from="1570297256854" duration="8373000" />
-      <workItem from="1570356576012" duration="14329000" />
+      <workItem from="1570356576012" duration="16773000" />
+      <workItem from="1570422402680" duration="4311000" />
+      <workItem from="1570432312192" duration="5102000" />
     </task>
     <servers />
   </component>
@@ -231,6 +257,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/hvktmm/at13/service/ProductService.java</url>
           <line>27</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/ProductController.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hvktmm/at13/service/ProductService.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hvktmm/at13/dao/CustomerDao.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

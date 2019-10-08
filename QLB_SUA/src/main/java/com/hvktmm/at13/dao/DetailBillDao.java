@@ -25,7 +25,7 @@ public class DetailBillDao {
 
         try {
             connection=getConnection();
-            String sql="insert into bill(amount,total_money,price,bill_id,product_id) values (?,?,?,?,?)";
+            String sql="insert into detail_bill(amount,total_money,price,bill_id,product_id) values (?,?,?,?,?)";
             ptmt=connection.prepareStatement(sql);
             ptmt.setInt(1,detailBill.getAmount());
             ptmt.setLong(2,detailBill.getTotal_money());

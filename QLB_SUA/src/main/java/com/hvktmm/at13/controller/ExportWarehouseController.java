@@ -70,15 +70,10 @@ public class ExportWarehouseController implements Initializable {
     @FXML
     public void ClickAddBill(ActionEvent event) {
         int idInsert = 0;
-        String name = String.valueOf(cbProduct.getValue());
-        product = productDao.idProduct(name);
-        int idProduct = product.get(0).getId();
-        long price = product.get(0).getPrice();
-        int amount = product.get(0).getAmount();
         productBill = FXCollections.observableArrayList();
         String idCustomer = txtId.getText();
         long totalMoney = Long.valueOf(txtTotalMoney.getText());
-        if(idCustomer!=null){
+        if(!idCustomer.equals("")){
             idInsert = Integer.valueOf(idCustomer);
             Customer customer = customerDao.oneCustomer(idInsert);
             Bill bill = new Bill(txtNote.getText(),Long.valueOf(txtTotalMoney.getText()), HomeController.userId,idInsert);
@@ -98,6 +93,9 @@ public class ExportWarehouseController implements Initializable {
         }
         productBill = tbBillProduct.getItems();
         for(BillIterm billIterm : productBill){
+            product = productDao.idProduct(billIterm.getName());
+            long price = product.get(0).getPrice();
+            int amount = product.get(0).getAmount();
             // update amount product
             productDao.updateAmount(billIterm.getId(),(amount - billIterm.getAmount()));
             TransactionHistory history = new TransactionHistory(billIterm.getAmount(),txtNote.getText(),billIterm.getId(),HomeController.userId);

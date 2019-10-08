@@ -4,35 +4,63 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="577.0" prefWidth="734.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.HomeController">
+<AnchorPane prefHeight="577.0" prefWidth="734.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.HomeController">
    <children>
       <SplitPane dividerPositions="0.33469945355191255" layoutY="7.0" prefHeight="577.0" prefWidth="734.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="575.0" prefWidth="344.0" style="-fx-background-color: #ccffcc;">
                <children>
-                  <JFXTextField fx:id="txtUserName" focusColor="#2050e1" labelFloat="true" layoutX="38.0" layoutY="275.0" prefHeight="25.0" prefWidth="196.0" promptText="Username" />
-                  <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="38.0" layoutY="338.0" prefHeight="25.0" prefWidth="196.0" promptText="Password" />
                   <JFXButton id="loginbutton" fx:id="btnLogin" layoutX="82.0" layoutY="395.0" onAction="#clickLogin" text="Đăng Nhập" />
-                  <JFXTextField alignment="BOTTOM_CENTER" cache="true" layoutX="-2.0" layoutY="33.0" prefHeight="51.0" prefWidth="249.0" text="QUẢN LÝ BÁN SỮA" unFocusColor="#4d4d4d">
+                  <Text layoutX="9.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quản Lý Bán Sữa" AnchorPane.rightAnchor="9.5966796875" AnchorPane.topAnchor="35.626953125">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font size="30.0" />
                      </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets></JFXTextField>
+                  </Text>
+                  <HBox layoutX="9.0" layoutY="268.0" prefHeight="42.0" prefWidth="223.0">
+                     <children>
+                        <ImageView fitHeight="42.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/user%20(1).png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="5.0" top="10.0" />
+                           </HBox.margin></ImageView>
+                        <JFXTextField fx:id="txtUserName" focusColor="#2050e1" labelFloat="true" prefHeight="39.0" prefWidth="195.0" promptText="Username" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="9.0" layoutY="331.0" prefHeight="39.0" prefWidth="223.0">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/lock%20(1).png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="5.0" top="7.0" />
+                           </HBox.margin></ImageView>
+                        <JFXPasswordField fx:id="txtPassword" labelFloat="true" prefHeight="37.0" prefWidth="196.0" promptText="Password" />
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" layoutX="39.0" layoutY="204.0" prefHeight="36.0" prefWidth="153.0" text="XIN CHÀO" textAlignment="CENTER" textFill="#4a3999">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
 
 
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="615.0" prefWidth="484.0">
                <children>
-                  <ImageView cache="true" fitHeight="585.0" fitWidth="578.0" layoutX="-32.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView cache="true" fitHeight="612.0" fitWidth="578.0" layoutX="-32.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-37.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-94.0" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/background.jpg" />
                      </image>

@@ -11,13 +11,14 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="521.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ExportWarehouseController">
+<AnchorPane prefHeight="568.0" prefWidth="970.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ExportWarehouseController">
    <children>
-      <AnchorPane prefHeight="77.0" prefWidth="789.0" style="-fx-background-color: #ffff99;" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="84.0" prefWidth="970.0" style="-fx-background-color: #ffff99;" AnchorPane.bottomAnchor="437.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Text layoutX="300.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hóa đơn" textAlignment="CENTER" wrappingWidth="147.966796875">
                <font>
@@ -31,68 +32,146 @@
              </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="14.0" layoutY="77.0" prefHeight="494.0" prefWidth="761.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="77.0">
+      <AnchorPane layoutX="14.0" layoutY="94.0" prefHeight="474.0" prefWidth="970.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="94.0">
          <children>
-            <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <SplitPane dividerPositions="0.265495867768595" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #00A1F1;">
                      <children>
-                        <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="-1.0" layoutY="36.0" onInputMethodTextChanged="#searchCustomer" onKeyReleased="#searchCustomer" prefHeight="30.0" prefWidth="232.0" promptText="Nhập tên khác hàng" AnchorPane.bottomAnchor="370.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font></JFXTextField>
-                        <TableView fx:id="tbSearchCus" layoutX="7.0" layoutY="72.0" onMouseClicked="#onTableClick" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="72.0">
+                        <HBox layoutX="13.0" layoutY="64.0" prefHeight="37.0" prefWidth="229.0">
+                           <children>
+                              <ImageView fitHeight="32.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/seoSearch.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <JFXTextField fx:id="txtSearch" labelFloat="true" onInputMethodTextChanged="#searchCustomer" onKeyReleased="#searchCustomer" prefHeight="24.0" prefWidth="187.0" promptText="Nhập tên khác hàng">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tbSearchCus" layoutX="7.0" layoutY="112.0" onMouseClicked="#onTableClick" prefHeight="360.0" prefWidth="254.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="112.0">
                           <columns>
                             <TableColumn fx:id="tbcId" prefWidth="43.0" text="MKH" />
                             <TableColumn fx:id="tbcCustomer" prefWidth="92.0" text="Tên KH" />
-                              <TableColumn fx:id="tbcCusTell" maxWidth="191.0" minWidth="-1.0" prefWidth="149.0" text="SDT" />
+                              <TableColumn fx:id="tbcCusTell" maxWidth="191.0" minWidth="-1.0" prefWidth="115.0" text="SDT" />
                           </columns>
                         </TableView>
-                        <Text layoutX="77.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm kiếm Khác Hàng" textAlignment="CENTER" wrappingWidth="131.13671875" AnchorPane.leftAnchor="77.0" AnchorPane.rightAnchor="76.86328125" AnchorPane.topAnchor="3.892578125">
+                        <Text layoutX="60.0" layoutY="21.265625" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm kiếm Khác Hàng" textAlignment="CENTER" wrappingWidth="147.966793961823" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="4.0">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="16.0" />
                            </font>
                         </Text>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="583.0" style="-fx-background-color: #66ccff;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="708.0" style="-fx-background-color: #66ccff;">
                      <children>
-                        <JFXTextField fx:id="txtId" editable="false" labelFloat="true" layoutX="14.0" layoutY="33.0" prefHeight="25.0" prefWidth="36.0" promptText="MKH" />
-                        <VBox layoutX="14.0" layoutY="99.0" prefHeight="185.0" prefWidth="215.0">
+                        <JFXTextField fx:id="txtId" editable="false" focusColor="#b5268d" labelFloat="true" layoutX="50.0" layoutY="32.0" prefHeight="25.0" prefWidth="36.0" promptText="MKH" />
+                        <VBox layoutX="14.0" layoutY="99.0" prefHeight="172.0" prefWidth="244.0">
                            <children>
-                              <JFXTextField fx:id="txtName" labelFloat="true" prefHeight="30.0" prefWidth="184.0" promptText="Tên khách hàng">
+                              <HBox prefHeight="43.0" prefWidth="215.0">
+                                 <children>
+                                    <ImageView fitHeight="43.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/responsive.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="7.0" top="8.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <JFXTextField fx:id="txtName" focusColor="#dd303c" labelFloat="true" prefHeight="40.0" prefWidth="211.0" promptText="Tên khách hàng" unFocusColor="#d038cd" />
+                                 </children>
                                  <VBox.margin>
-                                    <Insets bottom="40.0" top="2.0" />
+                                    <Insets bottom="20.0" />
                                  </VBox.margin>
-                              </JFXTextField>
-                              <JFXTextField fx:id="txtTell" labelFloat="true" prefHeight="30.0" prefWidth="184.0" promptText="Số Điên Thoại">
+                              </HBox>
+                              <HBox prefHeight="41.0" prefWidth="244.0">
+                                 <children>
+                                    <ImageView fitHeight="43.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/address.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="7.0" top="5.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <JFXTextField fx:id="txtAddress" focusColor="#37d791" labelFloat="true" prefHeight="33.0" prefWidth="211.0" promptText="Địa Chỉ" unFocusColor="#e0e814" />
+                                 </children>
                                  <VBox.margin>
-                                    <Insets bottom="40.0" />
+                                    <Insets bottom="20.0" />
                                  </VBox.margin>
-                              </JFXTextField>
-                              <JFXTextField fx:id="txtAddress" labelFloat="true" prefHeight="30.0" prefWidth="184.0" promptText="Địa Chỉ" />
+                              </HBox>
+                              <HBox prefHeight="43.0" prefWidth="215.0">
+                                 <children>
+                                    <ImageView fitHeight="43.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/mobile-phone.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="7.0" top="8.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <JFXTextField fx:id="txtTell" focusColor="#4dda91" labelFloat="true" prefHeight="40.0" prefWidth="211.0" promptText="Số Điên Thoại" unFocusColor="#bc1c1c" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
                            </children>
                         </VBox>
-                        <JFXComboBox fx:id="cbProduct" labelFloat="true" layoutX="275.0" layoutY="46.0" prefHeight="25.0" prefWidth="177.0" promptText="Sản phẩm" />
-                        <JFXTextField fx:id="txtAmount" labelFloat="true" layoutX="480.0" layoutY="46.0" prefHeight="25.0" prefWidth="57.0" promptText="Số Lượng" />
-                        <TableView fx:id="tbBillProduct" layoutX="275.0" layoutY="93.0" prefHeight="139.0" prefWidth="332.0">
+                        <JFXComboBox fx:id="cbProduct" focusColor="#40a858" labelFloat="true" layoutX="301.0" layoutY="47.0" prefHeight="25.0" prefWidth="177.0" promptText="Sản phẩm" unFocusColor="#3fc954" />
+                        <JFXTextField fx:id="txtAmount" labelFloat="true" layoutX="497.0" layoutY="47.0" prefHeight="25.0" prefWidth="57.0" promptText="Số Lượng" unFocusColor="#d31616" />
+                        <TableView fx:id="tbBillProduct" layoutX="301.0" layoutY="97.0" prefHeight="139.0" prefWidth="332.0">
                           <columns>
-                            <TableColumn fx:id="tbcNamePr" prefWidth="122.0" text="Tên Sản Phẩm" />
-                            <TableColumn fx:id="tbcAmount" prefWidth="73.0" text="Số Lượng" />
+                            <TableColumn fx:id="tbcNamePr" prefWidth="119.0" text="Tên Sản Phẩm" />
+                            <TableColumn fx:id="tbcAmount" prefWidth="76.0" text="Số Lượng" />
                               <TableColumn fx:id="tbcMoney" prefWidth="75.0" text="Thành TIền" />
                               <TableColumn fx:id="tbcDelete" prefWidth="61.0" text="Xóa" />
                           </columns>
                         </TableView>
-                        <JFXButton layoutX="551.0" layoutY="44.0" onAction="#ClickAddProduct" text="Thêm">
+                        <JFXButton layoutX="580.0" layoutY="44.0" onAction="#ClickAddProduct" prefHeight="32.0" prefWidth="57.0" styleClass="company-button" text="Thêm">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton layoutX="465.0" layoutY="377.0" onAction="#ClickAddBill" text="Tạo Hóa Đơn" />
-                        <JFXButton layoutX="578.0" layoutY="377.0" onAction="#ClickExit" text="Thoát" />
-                        <JFXButton layoutX="560.0" layoutY="246.0" onAction="#ClickDeleteProduct" text="Xóa" />
-                        <JFXTextField fx:id="txtTotalMoney" labelFloat="true" layoutX="275.0" layoutY="246.0" promptText="Tổng Tiền" />
-                        <JFXTextArea fx:id="txtNote" labelFloat="true" layoutX="14.0" layoutY="318.0" prefHeight="84.0" prefWidth="308.0" promptText="Ghi Chú" />
+                        <JFXButton layoutX="452.0" layoutY="430.0" onAction="#ClickAddBill" prefHeight="32.0" prefWidth="89.0" styleClass="company-button" text="Tạo Hóa Đơn" />
+                        <JFXButton layoutX="584.0" layoutY="435.0" onAction="#ClickExit" styleClass="company-button" text="Thoát" />
+                        <JFXButton layoutX="567.0" layoutY="265.0" onAction="#ClickDeleteProduct" prefHeight="30.0" prefWidth="57.0" styleClass="contronlerbutton" text="Xóa" />
+                        <HBox layoutX="14.0" layoutY="317.0" prefHeight="113.0" prefWidth="244.0">
+                           <children>
+                              <ImageView fitHeight="74.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/paper.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets top="25.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <JFXTextArea fx:id="txtNote" labelFloat="true" prefHeight="100.0" prefWidth="272.0" promptText="Ghi Chú" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="301.0" layoutY="261.0" prefHeight="33.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/purse.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="15.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <JFXTextField fx:id="txtTotalMoney" focusColor="#40a873" labelFloat="true" prefHeight="31.0" prefWidth="135.0" promptText="Tổng Tiền" unFocusColor="#da1111">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
                      </children>
                   </AnchorPane>
               </items>

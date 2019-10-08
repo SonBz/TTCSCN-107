@@ -17,11 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
 <AnchorPane prefHeight="499.0" prefWidth="715.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ProductController">
-=======
-<AnchorPane prefHeight="499.0" prefWidth="801.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ProductController">
->>>>>>> 58aa56ec1d56c1cdf1babb042da3c024368874ef
    <children>
       <JFXTabPane layoutX="137.0" layoutY="88.0" prefHeight="499.0" prefWidth="715.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <tabs>

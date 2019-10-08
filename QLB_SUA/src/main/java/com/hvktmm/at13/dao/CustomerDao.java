@@ -138,6 +138,7 @@ public class CustomerDao {
             ptmt.setString(2,customer.getAddress());
             ptmt.setString(3,customer.getPhoneNumber());
             ptmt.setLong(4,customer.getMoneyTotal());
+            ptmt.executeUpdate();
             ResultSet rs = ptmt.getGeneratedKeys();
             if (rs.next()) {
                 generatedKey = rs.getInt(1);

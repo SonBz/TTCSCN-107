@@ -27,7 +27,7 @@
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
                               </JFXTextField>
-                              <JFXComboBox fx:id="cbProduct" prefHeight="25.0" prefWidth="217.0">
+                              <JFXComboBox fx:id="cbProduct" labelFloat="true" prefHeight="25.0" prefWidth="217.0" promptText="Sản Phẩm">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
