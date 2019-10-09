@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="827.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ControllerAdmin">
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ControllerAdmin">
    <children>
       <ImageView fitHeight="650.0" fitWidth="854.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,7 +20,7 @@
       </ImageView>
       <JFXDrawer fx:id="drawer" defaultDrawerSize="190.0" prefHeight="650.0" prefWidth="190.0" />
       <JFXHamburger fx:id="hamburger" layoutX="498.0" layoutY="32.0" prefHeight="24.0" prefWidth="60.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0" />
-      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="223.0" layoutY="211.0" onAction="#ClickImportWarehouse" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Nhập Kho" AnchorPane.topAnchor="170.0">
+      <JFXButton fx:id="btnImport" contentDisplay="TOP" graphicTextGap="50.0" layoutX="223.0" layoutY="211.0" onAction="#ClickImportWarehouse" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Nhập Kho" AnchorPane.topAnchor="170.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -32,7 +32,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="390.0" layoutY="211.0" onAction="#ClickExportWarehouse" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Xuất Kho" AnchorPane.leftAnchor="390.0" AnchorPane.topAnchor="150.0">
+      <JFXButton fx:id="btnExport" contentDisplay="TOP" graphicTextGap="50.0" layoutX="390.0" layoutY="211.0" onAction="#ClickExportWarehouse" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Xuất Kho" AnchorPane.leftAnchor="390.0" AnchorPane.topAnchor="150.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -44,7 +44,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="553.0" layoutY="180.0" onAction="#ClickProduct" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Sản Phẩm" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="135.0">
+      <JFXButton fx:id="btnProduct" contentDisplay="TOP" graphicTextGap="50.0" layoutX="553.0" layoutY="180.0" onAction="#ClickProduct" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Sản Phẩm" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="135.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -56,7 +56,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="223.0" layoutY="399.0" onAction="#ClickCompany" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Nhà Cung Cấp" AnchorPane.topAnchor="390.0">
+      <JFXButton fx:id="btnCompany" contentDisplay="TOP" graphicTextGap="50.0" layoutX="223.0" layoutY="391.0" onAction="#ClickCompany" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Nhà Cung Cấp" AnchorPane.topAnchor="391.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -68,7 +68,7 @@
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="400.0" layoutY="390.0" onAction="#ClickUser" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Thành Viên" AnchorPane.leftAnchor="390.0" AnchorPane.topAnchor="370.0">
+      <JFXButton fx:id="btnUser" contentDisplay="TOP" graphicTextGap="50.0" layoutX="400.0" layoutY="390.0" onAction="#ClickUser" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Thành Viên" AnchorPane.leftAnchor="390.0" AnchorPane.topAnchor="370.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -80,7 +80,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton contentDisplay="TOP" graphicTextGap="50.0" layoutX="553.0" layoutY="376.0" onAction="#ClickCompany" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Cài Đặt" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="350.0">
+      <JFXButton fx:id="btnCustomer" contentDisplay="TOP" graphicTextGap="50.0" layoutX="553.0" layoutY="376.0" onAction="#ClickCustomer" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Khách Hàng" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="350.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -96,7 +96,7 @@
          <children>
             <ImageView fitHeight="31.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/client-icon-blue.png" />
+                  <Image url="@../img/stopwatch.png" />
                </image>
                <HBox.margin>
                   <Insets right="15.0" />
@@ -116,7 +116,7 @@
          <children>
             <ImageView fitHeight="32.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/stopwatch.png" />
+                  <Image url="@../img/team.png" />
                </image>
                <HBox.margin>
                   <Insets right="15.0" />
@@ -129,5 +129,17 @@
             </Label>
          </children>
       </HBox>
+      <JFXButton fx:id="btnHistory" contentDisplay="TOP" graphicTextGap="50.0" layoutX="730.0" layoutY="224.0" onAction="#ClickHistory" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Lịch Sử">
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/milk.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

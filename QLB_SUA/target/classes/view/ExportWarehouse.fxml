@@ -140,7 +140,7 @@
                            </font>
                         </JFXButton>
                         <JFXButton layoutX="452.0" layoutY="430.0" onAction="#ClickAddBill" prefHeight="32.0" prefWidth="89.0" styleClass="company-button" text="Tạo Hóa Đơn" />
-                        <JFXButton layoutX="584.0" layoutY="435.0" onAction="#ClickExit" styleClass="company-button" text="Thoát" />
+                        <JFXButton fx:id="btnExit" layoutX="584.0" layoutY="435.0" onAction="#ClickExit" styleClass="company-button" text="Thoát" />
                         <JFXButton layoutX="567.0" layoutY="265.0" onAction="#ClickDeleteProduct" prefHeight="30.0" prefWidth="57.0" styleClass="contronlerbutton" text="Xóa" />
                         <HBox layoutX="14.0" layoutY="317.0" prefHeight="113.0" prefWidth="244.0">
                            <children>

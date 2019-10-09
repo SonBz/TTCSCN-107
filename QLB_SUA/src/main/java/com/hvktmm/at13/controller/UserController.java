@@ -7,6 +7,7 @@ import com.hvktmm.at13.model.User;
 import com.hvktmm.at13.model.UserItem;
 import com.jfoenix.controls.*;
 import comhvktmm.at13.utils.DateTableUtils;
+import comhvktmm.at13.utils.RedictUtils;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -56,6 +57,9 @@ public class UserController implements Initializable {
     @FXML
     private Pagination pagination;
     @FXML
+    private JFXButton btnExit;
+    RedictUtils redictUtils = new RedictUtils();
+    @FXML
     private TableColumn<User, String> tbId = new TableColumn<User, String>();
     private ObservableList<String> gender = FXCollections.observableArrayList("Nam", "Nữ");
 
@@ -91,8 +95,9 @@ public class UserController implements Initializable {
 
     }
 
-    public void clickExit(ActionEvent event) {
-        ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
+    public void clickExit(ActionEvent event) throws Exception {
+//        ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
+        redictUtils.Redict("/view/ControllerAdmin.fxml","Trang Chủ",btnExit);
 
     }
 

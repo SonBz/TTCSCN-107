@@ -5,9 +5,11 @@ import com.hvktmm.at13.dao.TransactionHistoryDao;
 import com.hvktmm.at13.model.Product;
 import com.hvktmm.at13.model.TransactionHistory;
 import com.hvktmm.at13.model.User;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import comhvktmm.at13.utils.RedictUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,14 +29,18 @@ public class ImportWarehouseController implements Initializable {
     private JFXComboBox cbProduct;
     @FXML
     private JFXTextArea txtNote;
+    @FXML
+    private JFXButton btnExit;
+    RedictUtils redictUtils = new RedictUtils();
 
     ProductDao productDao= new ProductDao();
     TransactionHistoryDao dao = new TransactionHistoryDao();
     private ObservableList<String> productName = FXCollections.observableArrayList();
     ObservableList<Product> product = FXCollections.observableArrayList();
 
-    public void ClickClose(ActionEvent event) {
-        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+    public void ClickClose(ActionEvent event) throws Exception {
+//        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+        redictUtils.Redict("/view/ControllerAdmin.fxml","Trang Chủ",btnExit);
     }
 
     @Override

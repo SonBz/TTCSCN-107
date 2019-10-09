@@ -7,8 +7,10 @@ import com.hvktmm.at13.model.ProductItem;
 import com.hvktmm.at13.model.User;
 import com.hvktmm.at13.service.CompanyService;
 import com.hvktmm.at13.service.ProductService;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import comhvktmm.at13.utils.RedictUtils;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -50,6 +52,9 @@ public class ProductController implements Initializable {
     private TableColumn tbEdit;
     @FXML
     private TableColumn<ProductItem, String> tbId = new TableColumn<ProductItem, String>();
+    @FXML
+    private JFXButton btnExit;
+    RedictUtils redictUtils = new RedictUtils();
 
     private ObservableList<ProductItem> product_list = FXCollections.observableArrayList();
     private ObservableList<String> companyName = FXCollections.observableArrayList();
@@ -104,8 +109,9 @@ public class ProductController implements Initializable {
         tableView.setItems(product_list);
     }
 
-    public  void clickExit(ActionEvent event){
-        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+    public  void clickExit(ActionEvent event) throws Exception {
+//        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+        redictUtils.Redict("/view/ControllerAdmin.fxml","Trang Chủ",btnExit);
     }
 
     public void searchUser(){

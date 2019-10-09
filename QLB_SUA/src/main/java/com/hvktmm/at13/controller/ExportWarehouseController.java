@@ -2,11 +2,13 @@ package com.hvktmm.at13.controller;
 
 import com.hvktmm.at13.dao.*;
 import com.hvktmm.at13.model.*;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
 import comhvktmm.at13.utils.CheckField;
+import comhvktmm.at13.utils.RedictUtils;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,13 +23,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.paint.Paint;
-import javafx.stage.Stage;
-import javafx.util.Callback;
-
 import java.beans.IntrospectionException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -50,6 +45,9 @@ public class ExportWarehouseController implements Initializable {
     private JFXComboBox cbProduct;
     @FXML
     private TableColumn tbcNamePr,tbcAmount,tbcMoney;
+    @FXML
+    private JFXButton btnExit;
+    RedictUtils redictUtils = new RedictUtils();
 
     @FXML
     private TableColumn tbcDelete;
@@ -70,6 +68,7 @@ public class ExportWarehouseController implements Initializable {
     @FXML
     public void ClickAddBill(ActionEvent event) {
         int idInsert = 0;
+        int idBill = 0;
         productBill = FXCollections.observableArrayList();
         String idCustomer = txtId.getText();
         long totalMoney = Long.valueOf(txtTotalMoney.getText());
@@ -80,7 +79,7 @@ public class ExportWarehouseController implements Initializable {
             // update customer
             customerDao.updateCustomer((totalMoney+customer.getMoneyTotal()),(customer.getNumberOf()+1),idInsert);
             // insert bill
-            billDao.insertBill(bill);
+            idBill = billDao.insertBill(bill);
 
         }else {
             // add customer
@@ -89,7 +88,7 @@ public class ExportWarehouseController implements Initializable {
             customer_list.add(customer1);
             // add bill
             Bill bill = new Bill(txtNote.getText(),Long.valueOf(txtTotalMoney.getText()), HomeController.userId,idInsert);
-            billDao.insertBill(bill);
+            idBill = billDao.insertBill(bill);
         }
         productBill = tbBillProduct.getItems();
         for(BillIterm billIterm : productBill){
@@ -101,7 +100,7 @@ public class ExportWarehouseController implements Initializable {
             TransactionHistory history = new TransactionHistory(billIterm.getAmount(),txtNote.getText(),billIterm.getId(),HomeController.userId);
             // insert history
             historyDao.insertImport(history,0);
-            DetailBill detailBill = new DetailBill(billIterm.getAmount(),billIterm.getTotalMoney(),price,idInsert,billIterm.getId());
+            DetailBill detailBill = new DetailBill(billIterm.getAmount(),billIterm.getTotalMoney(),price,idBill,billIterm.getId());
             detailBillDao.insertDetailBill(detailBill);
         }
         setNull();
@@ -127,14 +126,18 @@ public class ExportWarehouseController implements Initializable {
             txtAmount.setText("");
             cbProduct.setValue(null);
         }else {
-            System.out.println("het");
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Số lượng sản phẩm không đủ");
+            alert.setContentText("Sản phẩm còn : "+amount);
         }
 
     }
 
     @FXML
-    public void ClickExit(ActionEvent event) {
-        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+    public void ClickExit(ActionEvent event) throws Exception {
+//        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+        redictUtils.Redict("/view/ControllerAdmin.fxml","Trang Chủ",btnExit);
     }
 
     @Override
@@ -211,6 +214,7 @@ public class ExportWarehouseController implements Initializable {
         txtName.setText("");
         txtNote.setText("");
         cbProduct.getItems();
+        tbBillProduct.getItems().clear();
     }
     public void ClickDeleteProduct(){
         ObservableList<BillIterm> deleteProductBill = FXCollections.observableArrayList();

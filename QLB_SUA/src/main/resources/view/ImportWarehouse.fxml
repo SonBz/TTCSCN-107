@@ -18,7 +18,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="989.0">
                      <children>
-                        <JFXButton layoutX="353.0" layoutY="355.0" onAction="#ClickClose" text="Thoát" />
+                        <JFXButton fx:id="btnExit" layoutX="353.0" layoutY="355.0" onAction="#ClickClose" text="Thoát" />
                         <JFXButton layoutX="228.0" layoutY="355.0" onAction="#ClickAdd" prefHeight="25.0" prefWidth="54.0" text="Thêm" />
                         <VBox layoutX="58.0" layoutY="109.0" prefHeight="200.0" prefWidth="216.0">
                            <children>

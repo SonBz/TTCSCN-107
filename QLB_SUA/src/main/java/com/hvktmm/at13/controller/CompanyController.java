@@ -6,7 +6,9 @@ import com.hvktmm.at13.model.CompanyItem;
 import com.hvktmm.at13.model.ProductItem;
 import com.hvktmm.at13.model.User;
 import com.hvktmm.at13.service.CompanyService;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import comhvktmm.at13.utils.RedictUtils;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.ObjectBinding;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -43,6 +45,9 @@ public class CompanyController implements Initializable {
     private TableColumn tbAddress;
     @FXML
     private TableColumn tbTell;
+    @FXML
+    private JFXButton btnExit;
+    RedictUtils redictUtils = new RedictUtils();
 
     private ObservableList<CompanyItem> companyList = FXCollections.observableArrayList();
     private FilteredList<CompanyItem> filteredList =new FilteredList<>(companyList, e->true);
@@ -83,8 +88,9 @@ public class CompanyController implements Initializable {
         }
 
     }
-    public void ClickClose(ActionEvent event) {
-        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+    public void ClickClose(ActionEvent event) throws Exception {
+//        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+        redictUtils.Redict("/view/ControllerAdmin.fxml","Trang Chủ",btnExit);
     }
 
     @FXML

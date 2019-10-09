@@ -3,6 +3,7 @@ package com.hvktmm.at13.controller;
 import com.hvktmm.at13.dao.UserDao;
 import com.hvktmm.at13.model.User;
 import com.jfoenix.controls.*;
+import comhvktmm.at13.utils.RedictUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +21,7 @@ public class HomeController {
     private JFXPasswordField txtPassword;
     public static int userId = 0;
     public  static  String name = "";
-
+    RedictUtils redictUtils = new RedictUtils();
 
     public void clickLogin(ActionEvent event) throws Exception{
         String userName = txtUserName.getText();
@@ -30,12 +31,8 @@ public class HomeController {
 
         if (user!=null && user.getIs_staff()==1){
             userId = user.getId();
-            name = user.getFirst_name()+" "+user.getLast_name();
-            Stage stage= (Stage) btnLogin.getScene().getWindow();
-            Parent parent= FXMLLoader.load(getClass().getResource("/view/ControllerAdmin.fxml"));
-            Scene scene=new Scene(parent);
-            stage.setScene(scene);
-            stage.show();
+            name = user.getLast_name().toUpperCase()+" "+user.getFirst_name().toUpperCase();
+            redictUtils.Redict("/view/ControllerAdmin.fxml","Trang Chủ",btnLogin);
         }
         else if(user!=null && user.getIs_staff()==0){
             userId = user.getId();
@@ -57,6 +54,5 @@ public class HomeController {
             txtUserName.setText("");
         }
     }
-
 
 }

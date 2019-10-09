@@ -12,6 +12,9 @@ public class BillIterm {
     private SimpleIntegerProperty amount;
     private SimpleLongProperty totalMoney;
     private CheckBox checkBox;
+    private SimpleStringProperty user;
+    private SimpleStringProperty note;
+    private  SimpleStringProperty dateTrading;
 
     public BillIterm() {
     }
@@ -22,6 +25,48 @@ public class BillIterm {
         this.totalMoney = new SimpleLongProperty(totalMoney);
         this.id = new SimpleIntegerProperty(id);
         this.checkBox = checkBox;
+    }
+    public BillIterm(int id, String dateTranding, String note,Long totalMoney,String user){
+        this.id = new SimpleIntegerProperty(id);
+        this.dateTrading = new SimpleStringProperty(dateTranding);
+        this.note = new SimpleStringProperty(note);
+        this.totalMoney = new SimpleLongProperty(totalMoney);
+        this.user = new SimpleStringProperty(user);
+    }
+    public String getUser() {
+        return user.get();
+    }
+
+    public SimpleStringProperty userProperty() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user.set(user);
+    }
+
+    public String getNote() {
+        return note.get();
+    }
+
+    public SimpleStringProperty noteProperty() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note.set(note);
+    }
+
+    public String getDateTrading() {
+        return dateTrading.get();
+    }
+
+    public SimpleStringProperty dateTradingProperty() {
+        return dateTrading;
+    }
+
+    public void setDateTrading(String dateTrading) {
+        this.dateTrading.set(dateTrading);
     }
 
     public CheckBox getCheckBox() {

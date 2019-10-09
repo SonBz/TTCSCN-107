@@ -59,7 +59,7 @@
                           </columns>
                         </TableView>
                         <JFXButton layoutX="298.0" layoutY="420.0" prefHeight="37.0" prefWidth="50.0" styleClass="contronlerbutton" text="Sửa" />
-                        <JFXButton layoutX="374.0" layoutY="421.0" onAction="#clickExit" prefHeight="36.0" prefWidth="59.0" styleClass="contronlerbutton" text="Thoát" />
+                        <JFXButton fx:id="btnExit" layoutX="374.0" layoutY="421.0" onAction="#clickExit" prefHeight="36.0" prefWidth="59.0" styleClass="contronlerbutton" text="Thoát" />
                         <JFXButton layoutX="461.0" layoutY="424.0" onAction="#clickDelete" prefHeight="33.0" prefWidth="59.0" styleClass="contronlerbutton" text="Xóa" />
                         <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="97.0" layoutY="102.0" onInputMethodTextChanged="#searchUser" onKeyReleased="#searchUser" prefHeight="25.0" prefWidth="210.0" promptText="Tìm kiếm" AnchorPane.bottomAnchor="356.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="454.0" AnchorPane.topAnchor="105.0" />
                         <ImageView fitHeight="29.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="358.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="669.0" AnchorPane.topAnchor="105.0">

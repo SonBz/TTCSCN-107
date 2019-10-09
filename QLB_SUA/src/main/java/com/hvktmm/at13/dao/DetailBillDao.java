@@ -3,6 +3,9 @@ package com.hvktmm.at13.dao;
 import com.hvktmm.at13.config.MySqlDao;
 import com.hvktmm.at13.model.Bill;
 import com.hvktmm.at13.model.DetailBill;
+import com.hvktmm.at13.model.DetailBillIterm;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.util.Date;
@@ -58,5 +61,84 @@ public class DetailBillDao {
         }
 
         return check;
+    }
+    public ObservableList<DetailBillIterm> detailBill(){
+        DetailBillIterm detailBillIterm=null;
+        ObservableList<DetailBillIterm> list = FXCollections.observableArrayList();
+        try {
+            connection=getConnection();
+            String sql="SELECT db.id,db.amount,db.total_money,db.price,p.name FROM detail_bill as db join product p where db.product_id= p.id";
+            ptmt=connection.prepareStatement(sql);
+            resultSet=ptmt.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                int amount = resultSet.getInt("amount");
+                long totalMoney = resultSet.getLong("total_money");
+                long price = resultSet.getLong("price");
+                String name = resultSet.getString("name");
+                detailBillIterm = new DetailBillIterm(id,amount,price, totalMoney,name);
+                list.add(detailBillIterm);
+            }
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+    public ObservableList<DetailBillIterm> detailBillList(int billId){
+        DetailBillIterm detailBillIterm=null;
+        ObservableList<DetailBillIterm> list = FXCollections.observableArrayList();
+        try {
+            connection=getConnection();
+            String sql="SELECT db.id,db.amount,db.total_money,db.price,p.name FROM detail_bill as db join product p where db.product_id= p.id and db.bill_id=?";
+            ptmt=connection.prepareStatement(sql);
+            ptmt.setInt(1,billId);
+            resultSet=ptmt.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                int amount = resultSet.getInt("amount");
+                long totalMoney = resultSet.getLong("total_money");
+                long price = resultSet.getLong("price");
+                String name = resultSet.getString("name");
+                detailBillIterm = new DetailBillIterm(id,amount,price, totalMoney,name);
+                list.add(detailBillIterm);
+            }
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 }

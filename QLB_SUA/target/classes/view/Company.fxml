@@ -45,7 +45,7 @@
                   </VBox>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="76.0" prefHeight="33.0" prefWidth="185.0" styleClass="company-text" text="Thêm Nhà Cung Cấp" />
                   <JFXButton layoutX="28.0" layoutY="345.0" onAction="#ClickAddCompany" prefHeight="34.0" prefWidth="63.0" styleClass="company-button" text="Thêm" />
-                  <JFXButton layoutX="120.0" layoutY="349.0" onAction="#ClickClose" prefHeight="34.0" prefWidth="63.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
+                  <JFXButton fx:id="btnExit" layoutX="120.0" layoutY="349.0" onAction="#ClickClose" prefHeight="34.0" prefWidth="63.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
                   <ImageView fitHeight="70.0" fitWidth="85.0" layoutX="76.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/factory.png" />
