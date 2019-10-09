@@ -1,6 +1,8 @@
 package com.hvktmm.at13.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import comhvktmm.at13.utils.RedictUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -23,6 +25,9 @@ public class HistoryController implements Initializable {
     private TableColumn tbIdEx, tbAmountEx, tbDateEx, tbNote, tbNameEx, tbUserEx, tbAmuontPrEx;
     @FXML
     private JFXTextField txtSearchIm,txtSearchEx;
+    @FXML
+    private JFXButton btnExit;
+    RedictUtils redictUtils = new RedictUtils();
 
     @FXML
     public void searchExport(KeyEvent event) {
@@ -37,5 +42,9 @@ public class HistoryController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    public void clickExit() throws Exception {
+        redictUtils.Redict("/view/ControllerAdmin.fxml","Trang Chủ",btnExit);
     }
 }

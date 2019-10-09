@@ -33,7 +33,7 @@ public class ControllerAdmin implements Initializable {
     @FXML
     private JFXDrawer drawer;
     @FXML
-    private JFXButton btnExport,btnProduct,btnImport,btnCompany,btnUser,btnCustomer;
+    private JFXButton btnExport,btnProduct,btnImport,btnCompany,btnUser,btnCustomer,btnHistory;
     @FXML
     private JFXHamburger hamburger;
     @FXML
@@ -89,8 +89,8 @@ public class ControllerAdmin implements Initializable {
     public void  ClickCustomer(ActionEvent event ) throws Exception{
         redictUtils.Redict("/view/Customer.fxml", "Chi Tiết Khác Hàng", btnCustomer);
     }
-
-
-
+    public void  ClickHistory(ActionEvent event ) throws Exception{
+        redictUtils.Redict("/view/History.fxml", "Lịch Sử Giao Dịch", btnHistory);
+    }
 
 }

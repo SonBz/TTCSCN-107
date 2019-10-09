@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="827.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ControllerAdmin">
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ControllerAdmin">
    <children>
       <ImageView fitHeight="650.0" fitWidth="854.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -129,5 +129,17 @@
             </Label>
          </children>
       </HBox>
+      <JFXButton fx:id="btnHistory" contentDisplay="TOP" graphicTextGap="50.0" layoutX="730.0" layoutY="224.0" onAction="#ClickHistory" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Lịch Sử">
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/milk.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

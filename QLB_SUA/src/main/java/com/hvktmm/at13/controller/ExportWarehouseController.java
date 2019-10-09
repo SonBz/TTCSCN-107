@@ -119,8 +119,8 @@ public class ExportWarehouseController implements Initializable {
         long total_money_product = price * txAmount;
         // tang tien
         total_money = total_money + total_money_product;
-        txtTotalMoney.setText(String.valueOf(total_money));
         if(idx >= 0 ){
+            txtTotalMoney.setText(String.valueOf(total_money));
             billIterm = new BillIterm(idProduct,name, txAmount, total_money_product,checkBox);
             tableProduct(billIterm);
             txtAmount.setText("");
@@ -128,8 +128,11 @@ public class ExportWarehouseController implements Initializable {
         }else {
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
-            alert.setHeaderText("Số lượng sản phẩm không đủ");
-            alert.setContentText("Sản phẩm còn : "+amount);
+            alert.setHeaderText("Số Lượng Sản Phẩm Không Đủ");
+            alert.setContentText("Sản Phẩm Chỉ Còn : "+amount);
+            alert.showAndWait();
+            cbProduct.getItems();
+            txtAmount.setText("");
         }
 
     }
@@ -213,6 +216,7 @@ public class ExportWarehouseController implements Initializable {
         txtTell.setText("");
         txtName.setText("");
         txtNote.setText("");
+        txtAmount.setText("");
         cbProduct.getItems();
         tbBillProduct.getItems().clear();
     }
