@@ -11,21 +11,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="577.0" prefWidth="734.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.HomeController">
+<AnchorPane prefHeight="802.0" prefWidth="1172.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.HomeController">
    <children>
       <SplitPane dividerPositions="0.33469945355191255" layoutY="7.0" prefHeight="577.0" prefWidth="734.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="575.0" prefWidth="344.0" style="-fx-background-color: #ccffcc;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="327.0" style="-fx-background-color: #b3ffb3;">
                <children>
-                  <JFXButton id="loginbutton" fx:id="btnLogin" layoutX="82.0" layoutY="395.0" onAction="#clickLogin" text="Đăng Nhập" />
-                  <Text layoutX="9.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quản Lý Bán Sữa" AnchorPane.rightAnchor="9.5966796875" AnchorPane.topAnchor="35.626953125">
+                  <JFXButton id="loginbutton" fx:id="btnLogin" alignment="CENTER" layoutX="99.0" layoutY="558.0" onAction="#clickLogin" prefHeight="41.0" prefWidth="192.0" style="-fx-background-color: #005c99;" styleClass="company-button" text="Đăng Nhập">
                      <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Text>
-                  <HBox layoutX="9.0" layoutY="268.0" prefHeight="42.0" prefWidth="223.0">
+                        <Font size="18.0" />
+                     </font></JFXButton>
+                  <HBox layoutX="83.0" layoutY="418.0" prefHeight="42.0" prefWidth="223.0">
                      <children>
                         <ImageView fitHeight="42.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -34,10 +31,14 @@
                            <HBox.margin>
                               <Insets right="5.0" top="10.0" />
                            </HBox.margin></ImageView>
-                        <JFXTextField fx:id="txtUserName" focusColor="#2050e1" labelFloat="true" prefHeight="39.0" prefWidth="195.0" promptText="Username" />
+                        <JFXTextField fx:id="txtUserName" focusColor="#2050e1" labelFloat="true" prefHeight="39.0" prefWidth="195.0" promptText="Username">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
                      </children>
                   </HBox>
-                  <HBox layoutX="9.0" layoutY="331.0" prefHeight="39.0" prefWidth="223.0">
+                  <HBox layoutX="83.0" layoutY="487.0" prefHeight="39.0" prefWidth="223.0">
                      <children>
                         <ImageView fitHeight="38.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -46,12 +47,15 @@
                            <HBox.margin>
                               <Insets right="5.0" top="7.0" />
                            </HBox.margin></ImageView>
-                        <JFXPasswordField fx:id="txtPassword" labelFloat="true" prefHeight="37.0" prefWidth="196.0" promptText="Password" />
+                        <JFXPasswordField fx:id="txtPassword" labelFloat="true" prefHeight="37.0" prefWidth="196.0" promptText="Password">
+                           <font>
+                              <Font size="18.0" />
+                           </font></JFXPasswordField>
                      </children>
                   </HBox>
-                  <Label alignment="CENTER" layoutX="39.0" layoutY="204.0" prefHeight="36.0" prefWidth="153.0" text="XIN CHÀO" textAlignment="CENTER" textFill="#4a3999">
+                  <Label alignment="CENTER" layoutX="54.0" layoutY="347.0" prefHeight="53.0" prefWidth="282.0" text="XIN CHÀO BẠN" textAlignment="CENTER" textFill="#3a4899">
                      <font>
-                        <Font size="25.0" />
+                        <Font size="36.0" />
                      </font>
                   </Label>
 
@@ -60,11 +64,16 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="615.0" prefWidth="484.0">
                <children>
-                  <ImageView cache="true" fitHeight="612.0" fitWidth="578.0" layoutX="-32.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-37.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-94.0" AnchorPane.topAnchor="0.0">
+                  <ImageView cache="true" fitHeight="802.0" fitWidth="1271.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-428.4207763671875" AnchorPane.topAnchor="-1.0">
                      <image>
-                        <Image url="@../img/background.jpg" />
+                        <Image url="@../img/milk_background.jpg" />
                      </image>
                   </ImageView>
+                  <Label layoutX="47.0" layoutY="53.0" prefHeight="105.0" prefWidth="681.0" text="PHẦN MỀM QUẢN LÝ BÁN SỮA" textFill="#009933">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
                </children></AnchorPane>
         </items>
       </SplitPane>
