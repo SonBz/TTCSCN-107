@@ -7,10 +7,13 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="456.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ImportWarehouseController">
+<AnchorPane prefHeight="456.0" prefWidth="758.0" style="-fx-background-color: #ccf3ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ImportWarehouseController">
    <children>
       <JFXTabPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <tabs>
@@ -18,23 +21,51 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="989.0">
                      <children>
-                        <JFXButton fx:id="btnExit" layoutX="353.0" layoutY="355.0" onAction="#ClickClose" text="Thoát" />
-                        <JFXButton layoutX="228.0" layoutY="355.0" onAction="#ClickAdd" prefHeight="25.0" prefWidth="54.0" text="Thêm" />
-                        <VBox layoutX="58.0" layoutY="109.0" prefHeight="200.0" prefWidth="216.0">
+                        <JFXButton fx:id="btnExit" layoutX="656.0" layoutY="355.0" onAction="#ClickClose" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát">
+                           <font>
+                              <Font size="15.0" />
+                           </font></JFXButton>
+                        <VBox layoutX="78.0" layoutY="119.0" prefHeight="200.0" prefWidth="216.0">
                            <children>
-                              <JFXTextField fx:id="txtAmount" labelFloat="true" prefHeight="25.0" prefWidth="214.0" promptText="Số Lượng">
+                              <JFXTextField fx:id="txtAmount" labelFloat="true" prefHeight="25.0" prefWidth="214.0" promptText="Số Lượng" styleClass="company-text" stylesheets="@../style/styles.css">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
                               </JFXTextField>
-                              <JFXComboBox fx:id="cbProduct" labelFloat="true" prefHeight="25.0" prefWidth="217.0" promptText="Sản Phẩm">
+                              <JFXComboBox fx:id="cbProduct" labelFloat="true" prefHeight="25.0" prefWidth="217.0" promptText="Sản Phẩm" styleClass="company-text" stylesheets="@../style/styles.css">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
                               </JFXComboBox>
+                              <JFXButton onAction="#ClickAdd" prefHeight="27.0" prefWidth="218.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thêm">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </JFXButton>
                            </children>
                         </VBox>
-                        <JFXTextArea fx:id="txtNote" labelFloat="true" layoutX="328.0" layoutY="91.0" prefHeight="138.0" prefWidth="401.0" promptText="Ghi Chú" />
+                        <JFXTextArea fx:id="txtNote" labelFloat="true" layoutX="370.0" layoutY="109.0" prefHeight="165.0" prefWidth="374.0" promptText="Ghi Chú" style="-fx-background-color: #99ffcc; -fx-border-color: #009933;" stylesheets="@../style/styles.css">
+                           <font>
+                              <Font size="20.0" />
+                           </font></JFXTextArea>
+                        <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="35.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/Calculator.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="48.0" fitWidth="56.0" layoutX="30.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/milk.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="64.0" fitWidth="41.0" layoutX="329.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/paper.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
               </content>
