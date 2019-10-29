@@ -1,13 +1,13 @@
 package com.hvktmm.at13.model;
 
 
-import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class TransactionHistory {
-    private int aumount;
-    private LocalDateTime dateImport, dateExport;
-    private String note;
+    private int aumount,id;
+    private Date dateImport, dateExport;
+    private String note, nameProduct, user;
     private int productId,userId;
 
     public TransactionHistory() {
@@ -20,28 +20,61 @@ public class TransactionHistory {
         this.userId = userId;
     }
 
+    public TransactionHistory(int aumount, int id, Date dateExport, String note, String nameProduct, String user) {
+        this.aumount = aumount;
+        this.id = id;
+        this.dateExport = dateExport;
+        this.note = note;
+        this.nameProduct = nameProduct;
+        this.user = user;
+    }
+
+    public String getNameProduct() {
+        return nameProduct;
+    }
+
+    public void setNameProduct(String nameProduct) {
+        this.nameProduct = nameProduct;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Date getDateImport() {
+        return dateImport;
+    }
+
+    public void setDateImport(Date dateImport) {
+        this.dateImport = dateImport;
+    }
+
+    public Date getDateExport() {
+        return dateExport;
+    }
+
+    public void setDateExport(Date dateExport) {
+        this.dateExport = dateExport;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getAumount() {
         return aumount;
     }
 
     public void setAumount(int aumount) {
         this.aumount = aumount;
-    }
-
-    public LocalDateTime getDateImport() {
-        return dateImport;
-    }
-
-    public void setDateImport(LocalDateTime dateImport) {
-        this.dateImport = dateImport;
-    }
-
-    public LocalDateTime getDateExport() {
-        return dateExport;
-    }
-
-    public void setDateExport(LocalDateTime dateExport) {
-        this.dateExport = dateExport;
     }
 
     public String getNote() {

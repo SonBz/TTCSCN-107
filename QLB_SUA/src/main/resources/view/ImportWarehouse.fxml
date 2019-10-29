@@ -6,12 +6,14 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="456.0" prefWidth="758.0" style="-fx-background-color: #ccf3ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ImportWarehouseController">
    <children>
@@ -25,11 +27,11 @@
                            <font>
                               <Font size="15.0" />
                            </font></JFXButton>
-                        <VBox layoutX="78.0" layoutY="119.0" prefHeight="200.0" prefWidth="216.0">
+                        <VBox layoutX="78.0" layoutY="102.0" prefHeight="224.0" prefWidth="216.0">
                            <children>
                               <JFXTextField fx:id="txtAmount" labelFloat="true" prefHeight="25.0" prefWidth="214.0" promptText="Số Lượng" styleClass="company-text" stylesheets="@../style/styles.css">
                                  <VBox.margin>
-                                    <Insets bottom="20.0" />
+                                    <Insets bottom="50.0" />
                                  </VBox.margin>
                                  <font>
                                     <Font size="15.0" />
@@ -37,7 +39,7 @@
                               </JFXTextField>
                               <JFXComboBox fx:id="cbProduct" labelFloat="true" prefHeight="25.0" prefWidth="217.0" promptText="Sản Phẩm" styleClass="company-text" stylesheets="@../style/styles.css">
                                  <VBox.margin>
-                                    <Insets bottom="20.0" />
+                                    <Insets bottom="40.0" />
                                  </VBox.margin>
                               </JFXComboBox>
                               <JFXButton onAction="#ClickAdd" prefHeight="27.0" prefWidth="218.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thêm">
@@ -50,7 +52,8 @@
                         <JFXTextArea fx:id="txtNote" labelFloat="true" layoutX="370.0" layoutY="109.0" prefHeight="165.0" prefWidth="374.0" promptText="Ghi Chú" style="-fx-background-color: #99ffcc; -fx-border-color: #009933;" stylesheets="@../style/styles.css">
                            <font>
                               <Font size="20.0" />
-                           </font></JFXTextArea>
+                           </font>
+                        </JFXTextArea>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="35.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/Calculator.png" />
@@ -66,6 +69,32 @@
                               <Image url="@../img/paper.png" />
                            </image>
                         </ImageView>
+                        <AnchorPane layoutX="2.0" layoutY="-1.0" prefHeight="80.0" prefWidth="758.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label fx:id="txtNameUser" layoutX="542.0" layoutY="10.0" prefHeight="30.0" prefWidth="154.0" AnchorPane.topAnchor="10.0" />
+                              <Label fx:id="txtDay" layoutX="542.0" layoutY="39.0" prefHeight="30.0" prefWidth="202.0" />
+                              <Text fill="#15a34c" fontSmoothingType="LCD" layoutX="136.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập Kho" textAlignment="CENTER" wrappingWidth="136.330078125">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="508.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="15.0">
+                                 <image>
+                                    <Image url="@../img/team.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="22.0" fitWidth="35.0" layoutX="507.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/stopwatch.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="64.0" fitWidth="40.0" layoutX="77.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="20.0">
+                                 <image>
+                                    <Image url="@../img/pallet.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
               </content>

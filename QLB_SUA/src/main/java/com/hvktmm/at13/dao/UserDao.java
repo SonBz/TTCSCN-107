@@ -295,4 +295,37 @@ public class UserDao {
             }
         }
     }
+    public String userName(int id) {
+        String name = "";
+        try {
+            connection = getConnection();
+            String sql = "select last_name from user where id=?";
+            ptmt = connection.prepareStatement(sql);
+            ptmt.setInt(1, id);
+            resultSet = ptmt.executeQuery();
+            while (resultSet.next()) {
+                name = resultSet.getString("last_name");
+            }
+            return name;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return name;
+    }
 }

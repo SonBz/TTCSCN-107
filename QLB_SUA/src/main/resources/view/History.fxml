@@ -21,15 +21,14 @@
                           <columns>
                             <TableColumn fx:id="tbIdIm" prefWidth="75.0" text="STT" />
                             <TableColumn fx:id="tbAmountIm" prefWidth="75.0" text="Số Lượng" />
-                              <TableColumn fx:id="tbDateIm" prefWidth="107.0" text="Ngày Nhâp Kho" />
-                              <TableColumn fx:id="tbNoteIm" prefWidth="113.0" text="Ghi Chú" />
-                              <TableColumn fx:id="tbNameIm" prefWidth="135.0" text="Tên Sản Phẩm" />
-                              <TableColumn fx:id="tbAmuontPrIm" prefWidth="94.0" text="Số Lượng Còn" />
-                              <TableColumn fx:id="tbUserIm" prefWidth="99.0" text="Người Nhập" />
+                              <TableColumn fx:id="tbDateIm" prefWidth="144.0" text="Ngày Nhâp Kho" />
+                              <TableColumn fx:id="tbNoteIm" prefWidth="107.0" text="Ghi Chú" />
+                              <TableColumn fx:id="tbNameIm" prefWidth="141.0" text="Tên Sản Phẩm" />
+                              <TableColumn fx:id="tbUserIm" prefWidth="157.0" text="Người Nhập" />
                           </columns>
                         </TableView>
                         <JFXButton fx:id="btnExit" layoutX="573.0" layoutY="411.0" onAction="#clickExit" prefHeight="25.0" prefWidth="59.0" text="Thoát" />
-                        <JFXTextField fx:id="txtSearchEx" labelFloat="true" layoutX="42.0" layoutY="33.0" onInputMethodTextChanged="#searchImport" onKeyReleased="#searchImport" prefHeight="25.0" prefWidth="214.0" promptText="Tìm kiếm sản phẩm">
+                        <JFXTextField fx:id="txtSearchIm" labelFloat="true" layoutX="42.0" layoutY="33.0" onInputMethodTextChanged="#searchImport" onKeyReleased="#searchImport" prefHeight="25.0" prefWidth="214.0" promptText="Tìm kiếm sản phẩm">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -46,15 +45,14 @@
                           <columns>
                             <TableColumn fx:id="tbIdEx" prefWidth="75.0" text="STT" />
                             <TableColumn fx:id="tbAmountEx" prefWidth="85.0" text="Số Lượng" />
-                              <TableColumn fx:id="tbDateEx" prefWidth="93.0" text="Ngày Bán" />
-                              <TableColumn fx:id="tbNote" prefWidth="108.0" text="Ghi Chú" />
-                              <TableColumn fx:id="tbNameEx" prefWidth="118.0" text="Tên Sản Phẩm" />
-                              <TableColumn fx:id="tbAmuontPrEx" prefWidth="107.0" text="Số lượng Còn" />
-                              <TableColumn fx:id="tbUserEx" prefWidth="113.0" text="Người Bán" />
+                              <TableColumn fx:id="tbDateEx" prefWidth="125.0" text="Ngày Bán" />
+                              <TableColumn fx:id="tbNote" prefWidth="135.0" text="Ghi Chú" />
+                              <TableColumn fx:id="tbNameEx" prefWidth="133.0" text="Tên Sản Phẩm" />
+                              <TableColumn fx:id="tbUserEx" prefWidth="146.0" text="Người Bán" />
                           </columns>
                         </TableView>
                         <JFXButton fx:id="btnExit" layoutX="583.0" layoutY="411.0" onAction="#clickExit" prefHeight="25.0" prefWidth="57.0" text="Thoát" />
-                        <JFXTextField fx:id="txtSearchIm" labelFloat="true" layoutX="42.0" layoutY="38.0" onInputMethodTextChanged="#searchExport" onKeyReleased="#searchExport" prefHeight="25.0" prefWidth="196.0" promptText="TÌm kiếm sản phẩm">
+                        <JFXTextField fx:id="txtSearchEx" labelFloat="true" layoutX="42.0" layoutY="38.0" onInputMethodTextChanged="#searchExport" onKeyReleased="#searchExport" prefHeight="25.0" prefWidth="196.0" promptText="TÌm kiếm sản phẩm">
                            <font>
                               <Font size="15.0" />
                            </font>

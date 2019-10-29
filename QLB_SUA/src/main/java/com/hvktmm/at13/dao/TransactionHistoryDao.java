@@ -2,6 +2,8 @@ package com.hvktmm.at13.dao;
 
 import com.hvktmm.at13.config.MySqlDao;
 import com.hvktmm.at13.model.TransactionHistory;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -75,4 +77,47 @@ public class TransactionHistoryDao {
 
         return check;
     }
+
+    public ObservableList<TransactionHistory> historyList(){
+        TransactionHistory transactionHistory=null;
+        ObservableList<TransactionHistory> list = FXCollections.observableArrayList();
+        try {
+            connection=getConnection();
+            String sql="select * from transaction_history ";
+            ptmt=connection.prepareStatement(sql);
+            resultSet=ptmt.executeQuery();
+            while (resultSet.next()){
+                transactionHistory=new TransactionHistory();
+                transactionHistory.setId(resultSet.getInt("id"));
+                transactionHistory.setAumount(resultSet.getInt("amount"));
+                transactionHistory.setNote((resultSet.getString("note")));
+                transactionHistory.setDateExport(resultSet.getDate("date_export"));
+                transactionHistory.setDateImport(resultSet.getDate("date_import"));
+                transactionHistory.setProductId(resultSet.getInt("product_id"));
+                transactionHistory.setUserId(resultSet.getInt("user_id"));
+                list.add(transactionHistory);
+            }
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
 }

@@ -101,7 +101,6 @@ public class CompanyController implements Initializable {
                     return true;
                 }
                 String lowerCaseFilter = newValue.toLowerCase();
-
                 if(company.getName().toLowerCase().indexOf(lowerCaseFilter) !=-1){
                     return true;
                 }

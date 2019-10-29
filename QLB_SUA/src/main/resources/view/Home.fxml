@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="616.0" prefWidth="982.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.HomeController">
+<AnchorPane prefHeight="615.0" prefWidth="980.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.HomeController">
    <children>
       <SplitPane dividerPositions="0.32551020408163267" layoutY="7.0" prefHeight="577.0" prefWidth="734.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -53,12 +53,12 @@
                            </font></JFXPasswordField>
                      </children>
                   </HBox>
-                  <Label alignment="CENTER" layoutX="22.0" layoutY="254.0" prefHeight="53.0" prefWidth="282.0" text="XIN CHÀO BẠN" textAlignment="CENTER" textFill="#3a4899">
+                  <Label alignment="CENTER" layoutX="32.0" layoutY="239.0" prefHeight="53.0" prefWidth="251.0" text="XIN CHÀO BẠN" textAlignment="CENTER" textFill="#3a4899">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="35.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="208.0" fitWidth="223.0" layoutX="60.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="172.0" fitWidth="208.0" layoutX="60.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/logohvktmm.png" />
                      </image>
@@ -74,7 +74,7 @@
                         <Image url="@../img/milk_background.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="14.0" layoutY="37.0" prefHeight="105.0" prefWidth="649.0" stylesheets="@../style/styles.css" text="PHẦN MỀM QUẢN LÝ BÁN SỮA" textFill="#009933">
+                  <Label layoutX="14.0" layoutY="37.0" prefHeight="105.0" prefWidth="649.0" stylesheets="@../style/styles.css" text="PHẦN MỀM QUẢN LÝ BÁN SỮA" textFill="RED">
                      <font>
                         <Font size="45.0" />
                      </font>

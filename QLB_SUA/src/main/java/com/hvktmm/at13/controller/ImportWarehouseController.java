@@ -16,10 +16,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
+import java.util.Date;
 
 public class ImportWarehouseController implements Initializable {
 
@@ -31,6 +34,8 @@ public class ImportWarehouseController implements Initializable {
     private JFXTextArea txtNote;
     @FXML
     private JFXButton btnExit;
+    @FXML
+    private Label txtNameUser,txtDay;
     RedictUtils redictUtils = new RedictUtils();
 
     ProductDao productDao= new ProductDao();
@@ -49,6 +54,10 @@ public class ImportWarehouseController implements Initializable {
        cbProduct.getItems().addAll(productName);
        cbProduct.getItems().add(productName.get(0));
        cbProduct.setValue(productName.get(0));
+        Date dNow = new Date( );
+        SimpleDateFormat ft = new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a");
+        txtNameUser.setText(HomeController.name);
+        txtDay.setText(ft.format(dNow));
 
     }
 
