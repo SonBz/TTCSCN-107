@@ -16,7 +16,8 @@ public class SidePanelController implements Initializable {
     @FXML
     private Label txtNameUser;
     @FXML
-    private JFXButton btnLogout;
+    private JFXButton btnLogout,btnProfile;
+    RedictUtils redictUtils = new RedictUtils();
 
     public void ClickLogout(ActionEvent event) throws Exception{
         Main main = new Main();
@@ -24,7 +25,7 @@ public class SidePanelController implements Initializable {
         main.start(stage);
     }
     public  void ClickProfile(ActionEvent event) throws  Exception{
-
+        redictUtils.Redict("/view/Profile.fxml","Trang Cá Nhân");
     }
 
     @Override

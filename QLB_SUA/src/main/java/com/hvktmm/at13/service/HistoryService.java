@@ -7,6 +7,7 @@ import com.hvktmm.at13.model.TransactionHistory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class HistoryService {
@@ -21,7 +22,7 @@ public class HistoryService {
 
         history_list = historyDao.historyList();
         for(int i=0; i< history_list.size();i++){
-            Date dataExport = history_list.get(i). getDateExport();
+            Timestamp dataExport = history_list.get(i). getDateExport();
             if (dataExport != null){
                 int id = history_list.get(i).getId();
                 int amount = history_list.get(i).getAmount();
@@ -44,7 +45,7 @@ public class HistoryService {
         history_list.clear();
         history_list = historyDao.historyList();
         for(int i=0; i< history_list.size();i++){
-            Date dataImport = history_list.get(i). getDateImport();
+            Timestamp dataImport = history_list.get(i). getDateExport();
             if (dataImport != null){
                 int id = history_list.get(i).getId();
                 int amount = history_list.get(i).getAmount();

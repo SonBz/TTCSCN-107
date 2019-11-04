@@ -21,5 +21,6 @@
       <JFXTextField fx:id="txtNameFile" labelFloat="true" layoutX="173.0" layoutY="136.0" prefHeight="25.0" prefWidth="180.0" promptText="Tên file" />
       <JFXButton layoutX="207.0" layoutY="263.0" onAction="#ClickReportImport" text="Báo Cáo Xuất Kho" />
       <JFXButton layoutX="339.0" layoutY="263.0" onAction="#ClickReportUser" text="Báo Cáo Nhân Viên" />
+      <JFXButton fx:id="btnExit" layoutX="458.0" layoutY="324.0" onAction="#ClickExit" prefHeight="25.0" prefWidth="58.0" text="Thoát" />
    </children>
 </AnchorPane>

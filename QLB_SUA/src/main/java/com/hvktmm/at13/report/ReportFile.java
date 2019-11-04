@@ -13,10 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ReportUser {
+public class ReportFile {
 
-    public static void main(String[] args) {
-    }
     public void report(String nameFile, ObservableList list, String namePrameter, String jasper) throws FileNotFoundException, JRException {
 //        ArrayList<UserReport> list = new ArrayList<>(); quanLyNguoiBan.jrxml
         String linkFile = "E:\\data\\";

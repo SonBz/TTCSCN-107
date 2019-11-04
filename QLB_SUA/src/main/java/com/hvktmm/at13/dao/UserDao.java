@@ -374,4 +374,81 @@ public class UserDao {
         }
         return null;
     }
+    public User getUser(Integer id){
+        User user=null;
+
+        try {
+
+            connection=getConnection();
+            String sql="select * from user where id=?";
+            ptmt=connection.prepareStatement(sql);
+            ptmt.setInt(1,id);
+            resultSet=ptmt.executeQuery();
+            if (resultSet.next()){
+                user=new User();
+                user.setId(resultSet.getInt("id"));
+                user.setFirst_name(resultSet.getString("first_name"));
+                user.setLast_name(resultSet.getString("last_name"));
+                user.setUsername(resultSet.getString("username"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPhone_number(resultSet.getString("phone_number"));
+                user.setAddress(resultSet.getString("address"));
+                user.setDate_of_birth(resultSet.getDate("date_of_birth"));
+                user.setGender(resultSet.getString("gender"));
+                user.setPassword(resultSet.getString("password"));
+
+            }
+            return user;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    public void updatePassword(String password, Integer id){
+        try {
+            connection = getConnection();
+            String sql = "update user set password=? where id =?";
+            ptmt = getConnection().prepareStatement(sql);
+            ptmt.setString(1,pass.encrypt(password));
+            ptmt.setInt(2,id);
+             ptmt.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
 }

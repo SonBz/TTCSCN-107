@@ -91,8 +91,8 @@ public class TransactionHistoryDao {
                 transactionHistory.setId(resultSet.getInt("id"));
                 transactionHistory.setAmount(resultSet.getInt("amount"));
                 transactionHistory.setNote((resultSet.getString("note")));
-                transactionHistory.setDateExport(resultSet.getDate("date_export"));
-                transactionHistory.setDateImport(resultSet.getDate("date_import"));
+                transactionHistory.setDateExport(resultSet.getTimestamp("date_export"));
+                transactionHistory.setDateImport(resultSet.getTimestamp("date_import"));
                 transactionHistory.setProductId(resultSet.getInt("product_id"));
                 transactionHistory.setUserId(resultSet.getInt("user_id"));
                 list.add(transactionHistory);

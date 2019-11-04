@@ -1,12 +1,13 @@
 package com.hvktmm.at13.model;
 
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Date;
 
 public class TransactionHistory {
     private int amount,id;
-    private Date dateImport, dateExport;
+    private Timestamp dateImport, dateExport;
     private String note, nameProduct, user;
     private int productId,userId;
 
@@ -20,7 +21,15 @@ public class TransactionHistory {
         this.userId = userId;
     }
 
-    public TransactionHistory(int amount, int id, Date dateExport, String note, String nameProduct, String user) {
+//    public TransactionHistory(int amount, int id, Date dateExport, String note, String nameProduct, String user) {
+//        this.amount = amount;
+//        this.id = id;
+//        this.dateExport = dateExport;
+//        this.note = note;
+//        this.nameProduct = nameProduct;
+//        this.user = user;
+//    }
+    public TransactionHistory(int amount, int id, Timestamp dateExport, String note, String nameProduct, String user) {
         this.amount = amount;
         this.id = id;
         this.dateExport = dateExport;
@@ -28,7 +37,6 @@ public class TransactionHistory {
         this.nameProduct = nameProduct;
         this.user = user;
     }
-
     public String getNameProduct() {
         return nameProduct;
     }
@@ -49,19 +57,36 @@ public class TransactionHistory {
         return id;
     }
 
-    public Date getDateImport() {
+//    public Date getDateImport() {
+//        return dateImport;
+//    }
+//
+//    public void setDateImport(Date dateImport) {
+//        this.dateImport = dateImport;
+//    }
+//
+//    public Date getDateExport() {
+//        return dateExport;
+//    }
+//
+//    public void setDateExport(Date dateExport) {
+//        this.dateExport = dateExport;
+//    }
+
+
+    public Timestamp getDateImport() {
         return dateImport;
     }
 
-    public void setDateImport(Date dateImport) {
+    public void setDateImport(Timestamp dateImport) {
         this.dateImport = dateImport;
     }
 
-    public Date getDateExport() {
+    public Timestamp getDateExport() {
         return dateExport;
     }
 
-    public void setDateExport(Date dateExport) {
+    public void setDateExport(Timestamp dateExport) {
         this.dateExport = dateExport;
     }
 

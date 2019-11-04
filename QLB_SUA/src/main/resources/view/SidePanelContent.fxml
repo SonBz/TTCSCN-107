@@ -32,7 +32,7 @@
       </Pane>
       <VBox>
          <children>
-            <JFXButton id="toolbar-button1" onAction="#ClickProfile" prefHeight="66.0" prefWidth="204.0" styleClass="toolbar-button" text="Thông Tin Cá Nhân" />
+            <JFXButton id="toolbar-button1" fx:id="btnProfile" onAction="#ClickProfile" prefHeight="66.0" prefWidth="204.0" styleClass="toolbar-button" text="Thông Tin Cá Nhân" />
             <JFXButton prefHeight="66.0" prefWidth="212.0" styleClass="toolbar-button" text="Trang Chủ" />
             <JFXButton fx:id="btnLogout" onAction="#ClickLogout" prefHeight="66.0" prefWidth="205.0" styleClass="toolbar-button" text="Đăng Xuất" />
          </children>
