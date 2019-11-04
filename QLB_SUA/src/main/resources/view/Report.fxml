@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ReportController">
+   <children>
+      <AnchorPane prefHeight="76.0" prefWidth="600.0">
+         <children>
+            <Text layoutX="210.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Xuất Báo Cáo" textAlignment="CENTER" wrappingWidth="180.13671875">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <JFXButton layoutX="80.0" layoutY="263.0" onAction="#ClickReportExport" text="Báo Cáo Nhập Kho" />
+      <JFXTextField fx:id="txtNameFile" labelFloat="true" layoutX="173.0" layoutY="136.0" prefHeight="25.0" prefWidth="180.0" promptText="Tên file" />
+      <JFXButton layoutX="207.0" layoutY="263.0" onAction="#ClickReportImport" text="Báo Cáo Xuất Kho" />
+      <JFXButton layoutX="339.0" layoutY="263.0" onAction="#ClickReportUser" text="Báo Cáo Nhân Viên" />
+   </children>
+</AnchorPane>

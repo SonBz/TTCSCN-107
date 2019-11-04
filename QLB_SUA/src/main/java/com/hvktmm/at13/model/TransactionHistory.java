@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public class TransactionHistory {
-    private int aumount,id;
+    private int amount,id;
     private Date dateImport, dateExport;
     private String note, nameProduct, user;
     private int productId,userId;
@@ -13,15 +13,15 @@ public class TransactionHistory {
     public TransactionHistory() {
     }
 
-    public TransactionHistory(int aumount, String note, int productId, int userId) {
-        this.aumount = aumount;
+    public TransactionHistory(int amount, String note, int productId, int userId) {
+        this.amount = amount;
         this.note = note;
         this.productId = productId;
         this.userId = userId;
     }
 
-    public TransactionHistory(int aumount, int id, Date dateExport, String note, String nameProduct, String user) {
-        this.aumount = aumount;
+    public TransactionHistory(int amount, int id, Date dateExport, String note, String nameProduct, String user) {
+        this.amount = amount;
         this.id = id;
         this.dateExport = dateExport;
         this.note = note;
@@ -69,12 +69,12 @@ public class TransactionHistory {
         this.id = id;
     }
 
-    public int getAumount() {
-        return aumount;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setAumount(int aumount) {
-        this.aumount = aumount;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public String getNote() {

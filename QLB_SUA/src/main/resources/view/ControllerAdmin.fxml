@@ -57,7 +57,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnCompany" contentDisplay="TOP" graphicTextGap="50.0" layoutX="301.0" layoutY="370.0" onAction="#ClickCompany" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Nhà Cung Cấp" AnchorPane.topAnchor="370.0">
+      <JFXButton fx:id="btnCompany" contentDisplay="TOP" graphicTextGap="50.0" layoutX="257.0" layoutY="370.0" onAction="#ClickCompany" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Nhà Cung Cấp" AnchorPane.leftAnchor="257.0" AnchorPane.topAnchor="370.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -69,7 +69,7 @@
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnUser" contentDisplay="TOP" graphicTextGap="50.0" layoutX="472.0" layoutY="370.0" onAction="#ClickUser" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Thành Viên" AnchorPane.leftAnchor="472.0" AnchorPane.topAnchor="370.0">
+      <JFXButton fx:id="btnUser" contentDisplay="TOP" graphicTextGap="50.0" layoutX="434.0" layoutY="370.0" onAction="#ClickUser" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Thành Viên" AnchorPane.leftAnchor="434.0" AnchorPane.topAnchor="370.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -81,7 +81,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnCustomer" contentDisplay="TOP" graphicTextGap="50.0" layoutX="643.0" layoutY="370.0" onAction="#ClickCustomer" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Khách Hàng" AnchorPane.leftAnchor="643.0" AnchorPane.topAnchor="370.0">
+      <JFXButton fx:id="btnCustomer" contentDisplay="TOP" graphicTextGap="50.0" layoutX="610.0" layoutY="370.0" onAction="#ClickCustomer" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Khách Hàng" AnchorPane.leftAnchor="610.0" AnchorPane.topAnchor="370.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -135,6 +135,18 @@
             <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/history.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnReport" contentDisplay="TOP" graphicTextGap="50.0" layoutX="780.0" layoutY="370.0" onAction="#ClickReport" prefHeight="177.0" prefWidth="141.0" styleClass="contronlerbutton" text="Báo Cáo" AnchorPane.leftAnchor="780.0" AnchorPane.topAnchor="370.0">
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/settings.png" />
                </image>
             </ImageView>
          </graphic>

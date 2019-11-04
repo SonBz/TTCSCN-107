@@ -4,12 +4,14 @@ import com.hvktmm.at13.config.MySqlDao;
 import com.hvktmm.at13.model.Company;
 import com.hvktmm.at13.model.User;
 import com.hvktmm.at13.model.UserItem;
+import com.hvktmm.at13.model.UserReport;
 import com.jfoenix.controls.JFXButton;
 import comhvktmm.at13.utils.PassUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class UserDao {
     PreparedStatement ptmt=null;
@@ -327,5 +329,49 @@ public class UserDao {
             }
         }
         return name;
+    }
+    public ObservableList<UserReport> userReportList(){
+        UserReport userReport=null;
+        ObservableList<UserReport> list = FXCollections.observableArrayList();
+        try {
+            connection=getConnection();
+            String sql="select u.last_name,p.name,sum(db.amount) as amount, sum(db.total_money) as total_money  \n" +
+                        "from bill as b, detail_bill as db, user as u, product as p \n" +
+                        "where b.user_id = u.id and db.bill_id=b.id and db.product_id= p.id\n" +
+                        "group by db.product_id ";
+            ptmt=connection.prepareStatement(sql);
+            resultSet=ptmt.executeQuery();
+            int id = 0;
+            while (resultSet.next()){
+                id += 1;
+                userReport = new UserReport();
+                userReport.setStt(id);
+                userReport.setAmountProduct(resultSet.getInt("amount"));
+                userReport.setNameProduct(resultSet.getString("name"));
+                userReport.setUserName(resultSet.getString("last_name"));
+                userReport.setTotal_money(resultSet.getLong("total_money"));
+                list.add(userReport);
+            }
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ptmt != null) {
+                    ptmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 }

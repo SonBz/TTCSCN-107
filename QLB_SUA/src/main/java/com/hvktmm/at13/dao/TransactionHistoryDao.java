@@ -30,7 +30,7 @@ public class TransactionHistoryDao {
             if(idx == 1){
                 String sql="insert into transaction_history(amount,date_import,note,product_id,user_id) values (?,?,?,?,?)";
                 ptmt=connection.prepareStatement(sql);
-                ptmt.setInt(1,transactionHistory.getAumount());
+                ptmt.setInt(1,transactionHistory.getAmount());
                 ptmt.setTimestamp(2, timestamp);
                 ptmt.setString(3,transactionHistory.getNote());
                 ptmt.setInt(4,transactionHistory.getProductId());
@@ -43,7 +43,7 @@ public class TransactionHistoryDao {
             }else {
                 String sql="insert into transaction_history(amount,date_export,note,product_id,user_id) values (?,?,?,?,?)";
                 ptmt=connection.prepareStatement(sql);
-                ptmt.setInt(1,transactionHistory.getAumount());
+                ptmt.setInt(1,transactionHistory.getAmount());
                 ptmt.setTimestamp(2, timestamp);
                 ptmt.setString(3,transactionHistory.getNote());
                 ptmt.setInt(4,transactionHistory.getProductId());
@@ -89,7 +89,7 @@ public class TransactionHistoryDao {
             while (resultSet.next()){
                 transactionHistory=new TransactionHistory();
                 transactionHistory.setId(resultSet.getInt("id"));
-                transactionHistory.setAumount(resultSet.getInt("amount"));
+                transactionHistory.setAmount(resultSet.getInt("amount"));
                 transactionHistory.setNote((resultSet.getString("note")));
                 transactionHistory.setDateExport(resultSet.getDate("date_export"));
                 transactionHistory.setDateImport(resultSet.getDate("date_import"));

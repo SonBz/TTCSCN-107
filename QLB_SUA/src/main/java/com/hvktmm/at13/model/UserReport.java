@@ -4,15 +4,25 @@ public class UserReport {
     private int stt;
     private String userName,nameProduct;
     private int amountProduct;
+    private long total_money;
 
     public UserReport() {
     }
 
-    public UserReport(int stt, String userName, String nameProduct, int amountProduct) {
+    public UserReport(int stt, String userName, String nameProduct, int amountProduct, long total_money) {
         this.stt = stt;
         this.userName = userName;
         this.nameProduct = nameProduct;
         this.amountProduct = amountProduct;
+        this.total_money = total_money;
+    }
+
+    public long getTotal_money() {
+        return total_money;
+    }
+
+    public void setTotal_money(long total_money) {
+        this.total_money = total_money;
     }
 
     public int getStt() {

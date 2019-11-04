@@ -65,7 +65,7 @@ public class HistoryController implements Initializable {
             }
         });
         tbIdIm.setSortable(false);
-        tbAmountIm.setCellValueFactory(new PropertyValueFactory<>("aumount"));
+        tbAmountIm.setCellValueFactory(new PropertyValueFactory<>("amount"));
         tbDateIm.setCellValueFactory(new PropertyValueFactory<>("dateExport"));
         tbNoteIm.setCellValueFactory(new PropertyValueFactory<>("note"));
         tbNameIm.setCellValueFactory(new PropertyValueFactory<>("nameProduct"));
@@ -81,7 +81,7 @@ public class HistoryController implements Initializable {
             }
         });
         tbIdEx.setSortable(false);
-        tbAmountEx.setCellValueFactory(new PropertyValueFactory<>("aumount"));
+        tbAmountEx.setCellValueFactory(new PropertyValueFactory<>("amount"));
         tbDateEx.setCellValueFactory(new PropertyValueFactory<>("dateExport"));
         tbNote.setCellValueFactory(new PropertyValueFactory<>("note"));
         tbNameEx.setCellValueFactory(new PropertyValueFactory<>("nameProduct"));

@@ -24,7 +24,7 @@ public class HistoryService {
             Date dataExport = history_list.get(i). getDateExport();
             if (dataExport != null){
                 int id = history_list.get(i).getId();
-                int amount = history_list.get(i).getAumount();
+                int amount = history_list.get(i).getAmount();
                 String note = history_list.get(i).getNote();
                 int product_id = history_list.get(i).getProductId();
                 String name_product = productDao.productName(product_id);
@@ -47,7 +47,7 @@ public class HistoryService {
             Date dataImport = history_list.get(i). getDateImport();
             if (dataImport != null){
                 int id = history_list.get(i).getId();
-                int amount = history_list.get(i).getAumount();
+                int amount = history_list.get(i).getAmount();
                 String note = history_list.get(i).getNote();
                 int product_id = history_list.get(i).getProductId();
                 String name_product = productDao.productName(product_id);
