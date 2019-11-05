@@ -1,5 +1,6 @@
 package com.hvktmm.at13.report;
 
+import com.hvktmm.at13.model.TransactionHistory;
 import com.hvktmm.at13.model.UserReport;
 import javafx.collections.ObservableList;
 import net.sf.jasperreports.engine.*;
@@ -16,11 +17,9 @@ import java.util.Map;
 public class ReportFile {
 
     public void report(String nameFile, ObservableList list, String namePrameter, String jasper) throws FileNotFoundException, JRException {
-//        ArrayList<UserReport> list = new ArrayList<>(); quanLyNguoiBan.jrxml
-        String linkFile = "E:\\data\\";
-        String output = linkFile + nameFile;
-//        UserReport userReport = new UserReport(1,"son","san pham",3);
-//        list.add(userReport);
+        String linkFile = "C:\\Users\\Admin\\JaspersoftWorkspace\\BaoCaoBanSua\\";
+        String linkData = "E:\\data\\";
+        String output = linkData + nameFile;
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(list);
         Map<String, Object> prameters = new HashMap<>();
         prameters.put(namePrameter, dataSource);

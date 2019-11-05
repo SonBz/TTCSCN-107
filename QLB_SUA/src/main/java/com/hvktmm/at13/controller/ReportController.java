@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 
@@ -38,31 +39,59 @@ public class ReportController implements Initializable {
     RedictUtils redictUtils = new RedictUtils();
     @FXML
     void ClickReportExport(ActionEvent event) throws FileNotFoundException, JRException {
-        String nameFile =  txtNameFile.getText() +".pdf";
-        ObservableList<TransactionHistory> listHistory =  historyService.historyExportData();
-        String namePrameter = "HistoryParameter";
-        String jasper = "lichSuBan.jrxml";
-        reportUser.report(nameFile,listHistory,namePrameter,jasper);
-        txtNameFile.setText("");
+        if(!txtNameFile.getText().equals("")){
+            String nameFile =  txtNameFile.getText() +".pdf";
+            ObservableList<TransactionHistory> listHistory =  historyService.historyExportData();
+            String namePrameter = "PrHistoryImport";
+            String jasper = "nhapkho.jrxml";
+            reportUser.report(nameFile,listHistory,namePrameter,jasper);
+            txtNameFile.setText("");
+        }else {
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Tạo file thất bại");
+            alert.setContentText("Bạn phải nhập tên file");
+            alert.showAndWait();
+        }
+
     }
 
     @FXML
     void ClickReportImport(ActionEvent event) throws FileNotFoundException, JRException {
-        String nameFile =  txtNameFile.getText() +".pdf";
-        ObservableList<TransactionHistory> listHistory =  historyService.historyImportData();
-        String namePrameter = "PrHistoryImport";
-        String jasper = "nhapkho.jrxml";
-        reportUser.report(nameFile,listHistory,namePrameter,jasper);
+        if(!txtNameFile.getText().equals("")){
+            String nameFile =  txtNameFile.getText() +".pdf";
+            ObservableList<TransactionHistory> listHistory =  historyService.historyImportData();
+            String namePrameter = "HistoryParameter";
+            String jasper = "lichSuBan.jrxml";
+            reportUser.report(nameFile,listHistory,namePrameter,jasper);
+            txtNameFile.setText("");
+        }else {
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Tạo file thất bại");
+            alert.setContentText("Bạn phải nhập tên file");
+            alert.showAndWait();
+        }
+
     }
 
     @FXML
     void ClickReportUser(ActionEvent event) throws FileNotFoundException, JRException {
-        String nameFile =  txtNameFile.getText() +".pdf";
-        ObservableList<UserReport> listUser = userDao.userReportList();
-        String namePrameter = "parameter";
-        String jasper = "quanLyNguoiBan.jrxml";
-        reportUser.report(nameFile,listUser,namePrameter,jasper);
-        txtNameFile.setText("");
+        if(!txtNameFile.getText().equals("")){
+            String nameFile =  txtNameFile.getText() +".pdf";
+            ObservableList<UserReport> listUser = userDao.userReportList();
+            String namePrameter = "parameter";
+            String jasper = "quanLyNguoiBan.jrxml";
+            reportUser.report(nameFile,listUser,namePrameter,jasper);
+            txtNameFile.setText("");
+        }else {
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Tạo file thất bại");
+            alert.setContentText("Bạn phải nhập tên file");
+            alert.showAndWait();
+        }
+
     }
 
     public void ClickExit(ActionEvent event) throws Exception {

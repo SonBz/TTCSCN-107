@@ -2,38 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="222b311c-b3ac-4b38-ba51-eb64bfbf5e04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/ProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/TTCSCN-107.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/fontawesomefx_commons_8_15.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/fontawesomefx_fontawesome_4_7_0_9_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/jfoenix_8_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/SidePanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/controller/SidePanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/dao/TransactionHistoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/dao/TransactionHistoryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/model/TransactionHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/model/TransactionHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/report/ReportUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/report/ReportFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/service/HistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/service/HistoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/comhvktmm/at13/utils/RedictUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/comhvktmm/at13/utils/RedictUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ImportWarehouse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ImportWarehouse.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Report.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Report.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SidePanelContent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SidePanelContent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/report/ReportFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hvktmm/at13/report/ReportFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/ProfileController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/ReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/ReportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/SidePanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/controller/SidePanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/dao/TransactionHistoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/dao/TransactionHistoryDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/model/TransactionHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/model/TransactionHistory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/report/ReportUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/service/HistoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/comhvktmm/at13/utils/RedictUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comhvktmm/at13/utils/RedictUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ImportWarehouse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ImportWarehouse.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Report.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Report.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SidePanelContent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SidePanelContent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/report/ReportFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hvktmm/at13/report/ReportFile.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -256,6 +230,7 @@
       <workItem from="1572834558875" duration="4994000" />
       <workItem from="1572868007810" duration="5200000" />
       <workItem from="1572884085314" duration="9968000" />
+      <workItem from="1572920839222" duration="7231000" />
     </task>
     <servers />
   </component>
