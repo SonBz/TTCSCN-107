@@ -153,18 +153,27 @@ public class ProductController implements Initializable {
 
     public void clickDelete(ActionEvent event){
         ProductItem productItem = (ProductItem) tableView.getSelectionModel().getSelectedItem();
-        Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("XÁC NHẬN");
-        alert.setHeaderText("Bạn có chắc chắn muốn xóa");
-        alert.setContentText("Tên sản phẩm : "+productItem.getName());
-        ButtonType buttonTypeYes = new ButtonType("YES", ButtonBar.ButtonData.YES);
-        ButtonType buttonTypeNo = new ButtonType("NO", ButtonBar.ButtonData.NO);
-        alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
-        Optional<ButtonType> result = alert.showAndWait();
-        if(result.get() == buttonTypeYes){
-            productDao.deleteProduct(productItem.getName());
-            product_list.removeAll((ProductItem) tableView.getSelectionModel().getSelectedItem());
+        if(productItem != null){
+            Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("XÁC NHẬN");
+            alert.setHeaderText("Bạn có chắc chắn muốn xóa");
+            alert.setContentText("Tên sản phẩm : "+productItem.getName());
+            ButtonType buttonTypeYes = new ButtonType("YES", ButtonBar.ButtonData.YES);
+            ButtonType buttonTypeNo = new ButtonType("NO", ButtonBar.ButtonData.NO);
+            alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
+            Optional<ButtonType> result = alert.showAndWait();
+            if(result.get() == buttonTypeYes){
+                productDao.deleteProduct(productItem.getName());
+                product_list.removeAll((ProductItem) tableView.getSelectionModel().getSelectedItem());
+            }
+        }else {
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Lỗi Xóa Sản Phẩm");
+            alert.setContentText("Bạn cần chọn sản phẩm muốn xóa ");
+            alert.showAndWait();
         }
+
 
     }
     public void editTable() {
@@ -203,7 +212,7 @@ public class ProductController implements Initializable {
                             ProductItem productItem = getTableView().getItems().get(getIndex());
                             Product product = new Product(productItem.getName(),productItem.getPrice(),productItem.getCapacity(),
                                                 productItem.getProduct_type(),productItem.getCompany_id());
-                            productDao.updateProduct(product);
+                            productDao.updateProduct(product,productItem.getId());
                         });
                         setGraphic(button);
                         setText(null);

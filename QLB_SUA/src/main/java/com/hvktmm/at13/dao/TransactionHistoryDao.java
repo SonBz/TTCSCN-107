@@ -83,7 +83,7 @@ public class TransactionHistoryDao {
         ObservableList<TransactionHistory> list = FXCollections.observableArrayList();
         try {
             connection=getConnection();
-            String sql="select * from transaction_history ";
+            String sql="select * from transaction_history order by id desc";
             ptmt=connection.prepareStatement(sql);
             resultSet=ptmt.executeQuery();
             while (resultSet.next()){

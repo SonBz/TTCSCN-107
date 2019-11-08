@@ -128,7 +128,7 @@ public class ProductDao {
         }
     }
 
-    public void updateProduct(Product product){
+    public void updateProduct(Product product, Integer id){
         try {
             connection=getConnection();
             String sql="update product set name=?,price=?,capacity=?,product_type=?,company_id=? where id=?";
@@ -138,7 +138,7 @@ public class ProductDao {
             ptmt.setString(3,product.getCapacity());
             ptmt.setString(4,product.getProduct_type());
             ptmt.setInt(5,product.getCompany_id());
-            ptmt.setInt(6,product.getId());
+            ptmt.setInt(6,id);
             ptmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -280,8 +280,11 @@ public class ExportWarehouseController implements Initializable {
         for(BillIterm billIterm: tbBillProduct.getItems()){
             if(billIterm.getCheckBox().isSelected()){
                 deleteProductBill.add(billIterm);
+                total_money = total_money - billIterm.getTotalMoney();
+
             }
         }
+        txtTotalMoney.setText(String.valueOf(total_money));
         productBill.removeAll(deleteProductBill);
     }
 }

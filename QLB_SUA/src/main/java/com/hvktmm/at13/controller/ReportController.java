@@ -51,8 +51,8 @@ public class ReportController implements Initializable {
             listHistory.clear();
             String nameFile =  txtNameFile.getText() +".pdf";
             listHistory =  historyService.historyExportData();
-            String namePrameter = "PrHistoryImport";
-            String jasper = "nhapkho.jrxml";
+            String namePrameter = "HistoryParameter";
+            String jasper = "lichSuBan.jrxml";
             reportUser.report(nameFile,listHistory,namePrameter,jasper);
             txtNameFile.setText("");
         }else {
@@ -71,8 +71,8 @@ public class ReportController implements Initializable {
             listHistory.clear();
             String nameFile =  txtNameFile.getText() +".pdf";
             listHistory =  historyService.historyImportData();
-            String namePrameter = "HistoryParameter";
-            String jasper = "lichSuBan.jrxml";
+            String namePrameter = "PrHistoryImport";
+            String jasper = "nhapkho.jrxml";
             reportUser.report(nameFile,listHistory,namePrameter,jasper);
             txtNameFile.setText("");
         }else {

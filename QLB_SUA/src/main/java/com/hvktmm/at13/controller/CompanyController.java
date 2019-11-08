@@ -117,17 +117,25 @@ public class CompanyController implements Initializable {
 
     public void clickDelete(ActionEvent event){
         CompanyItem company = tableView.getSelectionModel().getSelectedItem();
-        Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("XÁC NHẬN");
-        alert.setHeaderText("Bạn có chắc chắn muốn xóa");
-        alert.setContentText("Công ty : "+company.getName());
-        ButtonType buttonTypeYes = new ButtonType("YES", ButtonBar.ButtonData.YES);
-        ButtonType buttonTypeNo = new ButtonType("NO", ButtonBar.ButtonData.NO);
-        alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
-        Optional<ButtonType>result = alert.showAndWait();
-        if(result.get() == buttonTypeYes){
-            compayDao.deleteCompany(company.getName());
-            companyList.removeAll(tableView.getSelectionModel().getSelectedItem());
+        if(company != null){
+            Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("XÁC NHẬN");
+            alert.setHeaderText("Bạn có chắc chắn muốn xóa");
+            alert.setContentText("Công ty : "+company.getName());
+            ButtonType buttonTypeYes = new ButtonType("YES", ButtonBar.ButtonData.YES);
+            ButtonType buttonTypeNo = new ButtonType("NO", ButtonBar.ButtonData.NO);
+            alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
+            Optional<ButtonType>result = alert.showAndWait();
+            if(result.get() == buttonTypeYes){
+                compayDao.deleteCompany(company.getName());
+                companyList.removeAll(tableView.getSelectionModel().getSelectedItem());
+            }
+        }else {
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Lỗi Xóa Nhà Cung Cấp");
+            alert.setContentText("Bạn cần chọn nhà cung cấp muốn xóa ");
+            alert.showAndWait();
         }
 
     }
