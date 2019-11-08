@@ -17,8 +17,8 @@ import java.util.Map;
 public class ReportFile {
 
     public void report(String nameFile, ObservableList list, String namePrameter, String jasper) throws FileNotFoundException, JRException {
-        String linkFile = "C:\\Users\\Admin\\JaspersoftWorkspace\\BaoCaoBanSua\\";
-        String linkData = "E:\\data\\";
+        String linkFile = "C:\\Users\\Cuong\\JaspersoftWorkspace\\BaoCaoBanSua\\";
+        String linkData = "E:\\Thuc_tap_cs\\data\\";
         String output = linkData + nameFile;
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(list);
         Map<String, Object> prameters = new HashMap<>();

@@ -25,7 +25,7 @@ public class CheckField {
                 }
             }
         });
-        Image icon = new Image(new FileInputStream("E:/LapTrinh/java/JavaFx/TTCSCN-107/QLB_SUA/src/main/resources/img/warning.png"));
+        Image icon = new Image(new FileInputStream("E:/Thuc_tap_cs/TTCSCN/TTCSCN-107/QLB_SUA/src/main/resources/img/warning.png"));
         validator.setIcon(new ImageView(icon));
 
     }
@@ -41,7 +41,7 @@ public class CheckField {
                 }
             }
         });
-        Image icon = new Image(new FileInputStream("E:/LapTrinh/java/JavaFx/TTCSCN-107/QLB_SUA/src/main/resources/img/warning.png"));
+        Image icon = new Image(new FileInputStream("E:/Thuc_tap_cs/TTCSCN/TTCSCN-107/QLB_SUA/src/main/resources/img/warning.png"));
         validator.setIcon(new ImageView(icon));
 
     }

@@ -2,25 +2,57 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ReportController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ccf3ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ReportController">
    <children>
-      <AnchorPane prefHeight="76.0" prefWidth="600.0">
+      <AnchorPane layoutY="-1.0" prefHeight="101.0" prefWidth="600.0" style="-fx-background-color: #66ccff;">
          <children>
-            <Text layoutX="210.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Xuất Báo Cáo" textAlignment="CENTER" wrappingWidth="180.13671875">
+            <Text layoutX="232.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Xuất Báo Cáo" textAlignment="CENTER" wrappingWidth="193.13671875">
                <font>
-                  <Font size="30.0" />
+                  <Font size="32.0" />
                </font>
             </Text>
+            <ImageView fitHeight="78.0" fitWidth="68.0" layoutX="164.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/report2.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <JFXButton layoutX="80.0" layoutY="263.0" onAction="#ClickReportExport" text="Báo Cáo Nhập Kho" />
-      <JFXTextField fx:id="txtNameFile" labelFloat="true" layoutX="173.0" layoutY="136.0" prefHeight="25.0" prefWidth="180.0" promptText="Tên file" />
-      <JFXButton layoutX="207.0" layoutY="263.0" onAction="#ClickReportImport" text="Báo Cáo Xuất Kho" />
-      <JFXButton layoutX="339.0" layoutY="263.0" onAction="#ClickReportUser" text="Báo Cáo Nhân Viên" />
-      <JFXButton fx:id="btnExit" layoutX="458.0" layoutY="324.0" onAction="#ClickExit" prefHeight="25.0" prefWidth="58.0" text="Thoát" />
+      <JFXButton layoutX="70.0" layoutY="261.0" onAction="#ClickReportExport" style="-fx-background-color: #66ff66;" text="Báo Cáo Nhập Kho">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></JFXButton>
+      <JFXTextField fx:id="txtNameFile" labelFloat="true" layoutX="154.0" layoutY="174.0" prefHeight="39.0" prefWidth="292.0" promptText="Tên file" style="-fx-background-color: #66ccff;">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></JFXTextField>
+      <JFXButton layoutX="234.0" layoutY="261.0" onAction="#ClickReportImport" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #66ff66;" text="Báo Cáo Xuất Kho">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="394.0" layoutY="261.0" onAction="#ClickReportUser" style="-fx-background-color: #66ff66;" text="Báo Cáo Nhân Viên">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="btnExit" layoutX="468.0" layoutY="333.0" onAction="#ClickExit" prefHeight="30.0" prefWidth="68.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
+      <Label fx:id="lbTime" layoutX="336.0" layoutY="115.0" prefHeight="25.0" prefWidth="167.0" />
+      <Label fx:id="lbUser" layoutX="113.0" layoutY="115.0" prefHeight="25.0" prefWidth="167.0" />
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="78.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/team.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="300.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/stopwatch.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

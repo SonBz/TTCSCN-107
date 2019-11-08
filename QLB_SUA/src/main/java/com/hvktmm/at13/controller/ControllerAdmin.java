@@ -62,7 +62,7 @@ public class ControllerAdmin implements Initializable {
             public void handle(Event event) {
                 transition.setRate(transition.getRate() * -1);
                 transition.play();
-                if (drawer.isOpened()) {
+                if (drawer.isShown()) {
                     drawer.close();
                 } else {
                     drawer.open();

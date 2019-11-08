@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -18,9 +19,9 @@
 
 <AnchorPane prefHeight="568.0" prefWidth="970.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.ExportWarehouseController">
    <children>
-      <AnchorPane prefHeight="95.0" prefWidth="970.0" style="-fx-background-color: #00ace6;" AnchorPane.bottomAnchor="473.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="95.0" prefWidth="970.0" style="-fx-background-color: #66ccff;" AnchorPane.bottomAnchor="473.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text layoutX="374.0" layoutY="62.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="TẠO HÓA ĐƠN" underline="true" wrappingWidth="287.99999175965786">
+            <Text layoutX="391.0" layoutY="62.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="XUẤT HÀNG" underline="true" wrappingWidth="268.99999175965786">
                <font>
                   <Font size="36.0" />
                </font>
@@ -151,8 +152,8 @@
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton layoutX="481.0" layoutY="431.0" onAction="#ClickAddBill" prefHeight="32.0" prefWidth="89.0" styleClass="company-button" text="Tạo Hóa Đơn" />
-                        <JFXButton fx:id="btnExit" layoutX="580.0" layoutY="430.0" onAction="#ClickExit" prefHeight="33.0" prefWidth="57.0" styleClass="company-button" text="Thoát" />
+                        <JFXButton layoutX="445.0" layoutY="399.0" onAction="#ClickAddBill" prefHeight="32.0" prefWidth="89.0" styleClass="company-button" text="Xuất Hàng" />
+                        <JFXButton fx:id="btnExit" layoutX="570.0" layoutY="398.0" onAction="#ClickExit" prefHeight="33.0" prefWidth="57.0" styleClass="company-button" text="Thoát" />
                         <JFXButton layoutX="580.0" layoutY="265.0" onAction="#ClickDeleteProduct" prefHeight="30.0" prefWidth="57.0" styleClass="company-button" text="Xóa" />
                         <HBox layoutX="14.0" layoutY="317.0" prefHeight="113.0" prefWidth="244.0">
                            <children>
@@ -195,6 +196,11 @@
                               <Image url="@../img/team.png" />
                            </image>
                         </ImageView>
+                        <Label fx:id="lbResult" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="291.0" layoutY="396.0" prefHeight="37.0" prefWidth="135.0" textAlignment="CENTER" textFill="#f22f03">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
               </items>

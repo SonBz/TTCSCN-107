@@ -71,6 +71,8 @@ public class ImportWarehouseController implements Initializable {
         Boolean check = dao.insertImport(importData,1);
         if (check=true){
             productDao.updateAmount(idProduct,updateAmount);
+            txtAmount.setText("");
+
         }else {
             System.out.println("sai");
         }

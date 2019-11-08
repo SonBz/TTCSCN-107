@@ -11,53 +11,53 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="467.0" prefWidth="798.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.CompanyController">
+<AnchorPane prefHeight="581.0" prefWidth="945.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.CompanyController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #00A1F1;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #66ccff;">
                <children>
-                  <VBox layoutX="10.0" layoutY="125.0" prefHeight="161.0" prefWidth="202.0">
+                  <VBox layoutX="38.0" layoutY="189.0" prefHeight="201.0" prefWidth="202.0">
                      <children>
-                        <JFXTextField fx:id="txtName" labelFloat="true" promptText="Tên nhà cung cấp" unFocusColor="WHITE">
+                        <JFXTextField fx:id="txtName" focusColor="BLACK" labelFloat="true" promptText="Tên nhà cung cấp" unFocusColor="BLACK">
                            <VBox.margin>
                               <Insets bottom="30.0" top="10.0" />
                            </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="txtAddress" labelFloat="true" prefHeight="26.0" prefWidth="206.0" promptText="Địa chỉ">
+                        <JFXTextField fx:id="txtAddress" focusColor="BLACK" labelFloat="true" prefHeight="26.0" prefWidth="206.0" promptText="Địa chỉ" unFocusColor="BLACK">
                            <VBox.margin>
                               <Insets bottom="30.0" />
                            </VBox.margin>
-                           <unFocusColor>
-                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                                 <stops>
-                                    <Stop color="#fffdfd" />
-                                    <Stop color="WHITE" offset="1.0" />
-                                 </stops>
-                              </RadialGradient>
-                           </unFocusColor>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="txtTell" labelFloat="true" promptText="Số điện thoại" unFocusColor="#f8f4f4" />
+                        <JFXTextField fx:id="txtTell" focusColor="BLACK" labelFloat="true" promptText="Số điện thoại" unFocusColor="BLACK">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></JFXTextField>
                      </children>
                   </VBox>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="76.0" prefHeight="33.0" prefWidth="185.0" styleClass="company-text" text="Thêm Nhà Cung Cấp" />
-                  <JFXButton layoutX="28.0" layoutY="345.0" onAction="#ClickAddCompany" prefHeight="34.0" prefWidth="63.0" styleClass="company-button" text="Thêm" />
-                  <JFXButton fx:id="btnExit" layoutX="120.0" layoutY="349.0" onAction="#ClickClose" prefHeight="34.0" prefWidth="63.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
-                  <ImageView fitHeight="70.0" fitWidth="85.0" layoutX="76.0" pickOnBounds="true" preserveRatio="true">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="122.0" prefHeight="33.0" prefWidth="185.0" styleClass="company-text" text="Thêm Nhà Cung Cấp" />
+                  <JFXButton layoutX="41.0" layoutY="427.0" onAction="#ClickAddCompany" prefHeight="34.0" prefWidth="70.0" styleClass="company-button" text="Thêm" />
+                  <JFXButton fx:id="btnExit" layoutX="168.0" layoutY="427.0" onAction="#ClickClose" prefHeight="34.0" prefWidth="70.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
+                  <ImageView fitHeight="70.0" fitWidth="85.0" layoutX="104.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/factory.png" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="496.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="496.0" style="-fx-background-color: #ccf3ff;">
                <children>
-                  <AnchorPane prefHeight="70.0" prefWidth="316.0" style="-fx-background-color: #ffff99;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <AnchorPane prefHeight="70.0" prefWidth="316.0" style="-fx-background-color: #66ccff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <Label layoutX="202.0" layoutY="26.0" style="-fx-text-fill: #0019ff;" styleClass="company-text" text="Danh Sách Nhà Cung Cấp" />
+                        <Label layoutX="216.0" layoutY="20.0" style="-fx-text-fill: #000000;" styleClass="company-text" text="Danh Sách Nhà Cung Cấp" />
                         <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="105.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/company.png" />
@@ -65,7 +65,7 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <TableView fx:id="tableView" layoutX="1.0" layoutY="137.0" prefHeight="266.0" prefWidth="555.0">
+                  <TableView fx:id="tableView" layoutX="1.0" layoutY="137.0" prefHeight="366.0" prefWidth="659.0">
                     <columns>
                       <TableColumn fx:id="tbId" prefWidth="51.0" text="STT" />
                       <TableColumn fx:id="tbName" prefWidth="193.0" text="Tên" />
@@ -73,8 +73,8 @@
                         <TableColumn fx:id="tbAddress" prefWidth="181.0" text="Địa Chỉ" />
                     </columns>
                   </TableView>
-                  <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="69.0" layoutY="100.0" onInputMethodTextChanged="#searchUser" onKeyReleased="#searchUser" prefHeight="25.0" prefWidth="218.0" promptText="tìm kiếm" AnchorPane.topAnchor="100.0" />
-                  <JFXButton layoutX="462.0" layoutY="417.0" onAction="#clickDelete" prefHeight="25.0" prefWidth="63.0" styleClass="contronlerbutton" text="Xóa" />
+                  <JFXTextField fx:id="txtSearch" focusColor="BLACK" labelFloat="true" layoutX="69.0" layoutY="100.0" onInputMethodTextChanged="#searchUser" onKeyReleased="#searchUser" prefHeight="25.0" prefWidth="218.0" promptText="Tìm kiếm" unFocusColor="BLACK" AnchorPane.topAnchor="100.0" />
+                  <JFXButton layoutX="530.0" layoutY="518.0" onAction="#clickDelete" prefHeight="34.0" prefWidth="91.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Xóa" />
                   <ImageView fitHeight="29.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="100.0">
                      <image>
                         <Image url="@../img/seo-and-web.png" />

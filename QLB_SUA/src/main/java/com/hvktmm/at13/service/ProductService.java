@@ -14,7 +14,7 @@ public class ProductService {
     ProductDao productDao = new ProductDao();
 
     public ObservableList<ProductItem> ProductNameCompany() {
-
+        data.clear();
         product_list = productDao.ProductList();
         for(int i=0; i< product_list.size();i++){
             int id = product_list.get(i).getId();

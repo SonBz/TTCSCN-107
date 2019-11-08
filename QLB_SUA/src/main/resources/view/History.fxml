@@ -6,57 +6,69 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.HistoryController">
+<AnchorPane prefHeight="556.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.HistoryController">
    <children>
       <JFXTabPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <tabs>
             <Tab text="Danh Sách Nhập Kho">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ccf3ff;">
                      <children>
-                        <TableView fx:id="tableImport" layoutX="6.0" layoutY="82.0" prefHeight="299.0" prefWidth="700.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <TableView fx:id="tableImport" layoutX="6.0" layoutY="82.0" prefHeight="342.0" prefWidth="845.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                           <columns>
-                            <TableColumn fx:id="tbIdIm" prefWidth="75.0" text="STT" />
-                            <TableColumn fx:id="tbAmountIm" prefWidth="75.0" text="Số Lượng" />
-                              <TableColumn fx:id="tbDateIm" prefWidth="144.0" text="Ngày Nhâp Kho" />
-                              <TableColumn fx:id="tbNoteIm" prefWidth="107.0" text="Ghi Chú" />
-                              <TableColumn fx:id="tbNameIm" prefWidth="141.0" text="Tên Sản Phẩm" />
-                              <TableColumn fx:id="tbUserIm" prefWidth="157.0" text="Người Nhập" />
+                            <TableColumn fx:id="tbIdIm" prefWidth="43.0" text="STT" />
+                            <TableColumn fx:id="tbAmountIm" prefWidth="85.0" text="Số Lượng" />
+                              <TableColumn fx:id="tbDateIm" prefWidth="133.0" text="Ngày Nhâp Kho" />
+                              <TableColumn fx:id="tbNoteIm" prefWidth="176.0" text="Ghi Chú" />
+                              <TableColumn fx:id="tbNameIm" prefWidth="173.0" text="Tên Sản Phẩm" />
+                              <TableColumn fx:id="tbUserIm" prefWidth="234.0" text="Người Nhập" />
                           </columns>
                         </TableView>
-                        <JFXButton fx:id="btnExit" layoutX="573.0" layoutY="411.0" onAction="#clickExit" prefHeight="25.0" prefWidth="59.0" text="Thoát" />
-                        <JFXTextField fx:id="txtSearchIm" labelFloat="true" layoutX="42.0" layoutY="33.0" onInputMethodTextChanged="#searchImport" onKeyReleased="#searchImport" prefHeight="25.0" prefWidth="214.0" promptText="Tìm kiếm sản phẩm">
+                        <JFXButton fx:id="btnExit" layoutX="686.0" layoutY="447.0" onAction="#clickExit" prefHeight="38.0" prefWidth="88.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
+                        <JFXTextField fx:id="txtSearchIm" focusColor="BLACK" labelFloat="true" layoutX="75.0" layoutY="37.0" onInputMethodTextChanged="#searchImport" onKeyReleased="#searchImport" prefHeight="25.0" prefWidth="214.0" promptText="Tìm kiếm sản phẩm" unFocusColor="BLACK">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </JFXTextField>
+                        <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="34.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/search.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
               </content>
             </Tab>
             <Tab text="Danh Sách Xuất Kho">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ccf3ff;">
                      <children>
-                        <TableView fx:id="tableExport" layoutY="84.0" prefHeight="308.0" prefWidth="700.0">
+                        <TableView fx:id="tableExport" layoutY="84.0" prefHeight="342.0" prefWidth="845.0">
                           <columns>
-                            <TableColumn fx:id="tbIdEx" prefWidth="75.0" text="STT" />
+                            <TableColumn fx:id="tbIdEx" prefWidth="47.0" text="STT" />
                             <TableColumn fx:id="tbAmountEx" prefWidth="85.0" text="Số Lượng" />
-                              <TableColumn fx:id="tbDateEx" prefWidth="125.0" text="Ngày Bán" />
-                              <TableColumn fx:id="tbNote" prefWidth="135.0" text="Ghi Chú" />
-                              <TableColumn fx:id="tbNameEx" prefWidth="133.0" text="Tên Sản Phẩm" />
-                              <TableColumn fx:id="tbUserEx" prefWidth="146.0" text="Người Bán" />
+                              <TableColumn fx:id="tbDateEx" prefWidth="122.0" text="Ngày Bán" />
+                              <TableColumn fx:id="tbNote" prefWidth="166.0" text="Ghi Chú" />
+                              <TableColumn fx:id="tbNameEx" prefWidth="224.0" text="Tên Sản Phẩm" />
+                              <TableColumn fx:id="tbUserEx" prefWidth="200.0" text="Người Bán" />
                           </columns>
                         </TableView>
-                        <JFXButton fx:id="btnExit" layoutX="583.0" layoutY="411.0" onAction="#clickExit" prefHeight="25.0" prefWidth="57.0" text="Thoát" />
-                        <JFXTextField fx:id="txtSearchEx" labelFloat="true" layoutX="42.0" layoutY="38.0" onInputMethodTextChanged="#searchExport" onKeyReleased="#searchExport" prefHeight="25.0" prefWidth="196.0" promptText="TÌm kiếm sản phẩm">
+                        <JFXButton fx:id="btnExit" layoutX="684.0" layoutY="446.0" onAction="#clickExit" prefHeight="38.0" prefWidth="92.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
+                        <JFXTextField fx:id="txtSearchEx" focusColor="BLACK" labelFloat="true" layoutX="75.0" layoutY="39.0" onInputMethodTextChanged="#searchExport" onKeyReleased="#searchExport" prefHeight="25.0" prefWidth="196.0" promptText="Tìm kiếm sản phẩm" unFocusColor="BLACK">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </JFXTextField>
+                        <ImageView fitHeight="44.0" fitWidth="40.0" layoutX="35.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/search.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
               </content>

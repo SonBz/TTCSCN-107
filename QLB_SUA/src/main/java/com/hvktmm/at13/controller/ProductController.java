@@ -99,14 +99,30 @@ public class ProductController implements Initializable {
     }
 
     public void clickSave(ActionEvent event) throws IOException {
+
         String name = String.valueOf(cbCompany.getValue());
         int idCom = compayDao.idCompany(name);
-        Product product = new Product(txtName.getText(),Long.valueOf(txtPrice.getText()),
-                            String.valueOf(cbCapacity.getValue()),txtProductType.getText(),idCom, Integer.valueOf(txtAmount.getText()));
+        if(txtName.getText().equals("")||txtPrice.getText().equals("")||txtAmount.getText().equals("")||txtProductType.getText().equals("")){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Tạo sản phẩm thất bại");
+            alert.setContentText("Bạn phải nhập đủ các ô");
+            alert.showAndWait();
+        }else{
+            Product product = new Product(txtName.getText(),Long.valueOf(txtPrice.getText()),
+                    String.valueOf(cbCapacity.getValue()),txtProductType.getText(),idCom, Integer.valueOf(txtAmount.getText()));
 
-        productDao.insert(product);
-        product_list = companyService.ProductNameCompany();
-        tableView.setItems(product_list);
+            productDao.insert(product);
+            product_list = companyService.ProductNameCompany();
+            tableView.setItems(product_list);
+            txtProductType.setText("");
+            txtName.setText("");
+            txtAmount.setText("");
+            txtPrice.setText("");
+        }
+
+
+
     }
 
     public  void clickExit(ActionEvent event) throws Exception {

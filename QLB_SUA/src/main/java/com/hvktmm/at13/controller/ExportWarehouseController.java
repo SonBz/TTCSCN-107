@@ -10,6 +10,7 @@ import com.jfoenix.validation.RequiredFieldValidator;
 import comhvktmm.at13.utils.CheckField;
 import comhvktmm.at13.utils.RedictUtils;
 import javafx.application.Platform;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -23,6 +24,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
+
 import java.beans.IntrospectionException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -47,6 +50,9 @@ public class ExportWarehouseController implements Initializable {
     private TableColumn tbcNamePr,tbcAmount,tbcMoney;
     @FXML
     private JFXButton btnExit;
+    @FXML
+    private Label lbResult;
+
     RedictUtils redictUtils = new RedictUtils();
 
     @FXML
@@ -71,39 +77,64 @@ public class ExportWarehouseController implements Initializable {
         int idBill = 0;
         productBill = FXCollections.observableArrayList();
         String idCustomer = txtId.getText();
-        long totalMoney = Long.valueOf(txtTotalMoney.getText());
-        if(!idCustomer.equals("")){
-            idInsert = Integer.valueOf(idCustomer);
-            Customer customer = customerDao.oneCustomer(idInsert);
-            Bill bill = new Bill(txtNote.getText(),Long.valueOf(txtTotalMoney.getText()), HomeController.userId,idInsert);
-            // update customer
-            customerDao.updateCustomer((totalMoney+customer.getMoneyTotal()),(customer.getNumberOf()+1),idInsert);
-            // insert bill
-            idBill = billDao.insertBill(bill);
-
+        if(txtTotalMoney.getText().equals("")){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Tạo Hóa Đơn Không Thành Công");
+            alert.setContentText("Bạn hãy thêm sản phẩm ");
+            alert.showAndWait();
+            txtAmount.setText("");
         }else {
-            // add customer
-            Customer customer1 = new Customer(txtName.getText(),txtAddress.getText(),txtTell.getText(),totalMoney);
-            idInsert = customerDao.insertCustomer(customer1);
-            customer_list.add(customer1);
-            // add bill
-            Bill bill = new Bill(txtNote.getText(),Long.valueOf(txtTotalMoney.getText()), HomeController.userId,idInsert);
-            idBill = billDao.insertBill(bill);
+            long totalMoney = Long.valueOf(txtTotalMoney.getText());
+            if(!idCustomer.equals("")){
+                idInsert = Integer.valueOf(idCustomer);
+                Customer customer = customerDao.oneCustomer(idInsert);
+                Bill bill = new Bill(txtNote.getText(),Long.valueOf(txtTotalMoney.getText()), HomeController.userId,idInsert);
+                // update customer
+                customerDao.updateCustomer((totalMoney+customer.getMoneyTotal()),(customer.getNumberOf()+1),idInsert);
+                // insert bill
+                idBill = billDao.insertBill(bill);
+
+            }else {
+                if(txtName.getText().equals("")||txtAddress.getText().equals("")||txtTell.getText().equals("")){
+                    lbResult.setText("");
+                    lbResult.setText("Không Thành Công");
+                }else{
+                    // add customer
+                    Customer customer1 = new Customer(txtName.getText(),txtAddress.getText(),txtTell.getText(),totalMoney);
+                    idInsert = customerDao.insertCustomer(customer1);
+                    customer_list.add(customer1);
+                    // add bill
+                    Bill bill = new Bill(txtNote.getText(),Long.valueOf(txtTotalMoney.getText()), HomeController.userId,idInsert);
+                    idBill = billDao.insertBill(bill);
+                    lbResult.setText("");
+                    lbResult.setText("Thành Công");
+                }
+            }
+            if(txtName.getText().equals("")||txtAddress.getText().equals("")||txtTell.getText().equals("")) {
+                lbResult.setText("");
+                lbResult.setText("Không Thành Công");
+            }else {
+                productBill = tbBillProduct.getItems();
+                for (int i=0 ; i<= productBill.size(); i++) {
+                    product = productDao.idProduct(billIterm.getName());
+                    long price = product.get(0).getPrice();
+                    int amount = product.get(0).getAmount();
+                    // update amount product
+                    productDao.updateAmount(billIterm.getId(), (amount - billIterm.getAmount()));
+                    TransactionHistory history = new TransactionHistory(billIterm.getAmount(), txtNote.getText(), billIterm.getId(), HomeController.userId);
+                    // insert history
+                    historyDao.insertImport(history, 0);
+                    DetailBill detailBill = new DetailBill(billIterm.getAmount(), billIterm.getTotalMoney(), price, idBill, billIterm.getId());
+                    detailBillDao.insertDetailBill(detailBill);
+                    lbResult.setText("");
+                    lbResult.setText("Thành Công");
+                    setNull();
+                }
         }
-        productBill = tbBillProduct.getItems();
-        for(BillIterm billIterm : productBill){
-            product = productDao.idProduct(billIterm.getName());
-            long price = product.get(0).getPrice();
-            int amount = product.get(0).getAmount();
-            // update amount product
-            productDao.updateAmount(billIterm.getId(),(amount - billIterm.getAmount()));
-            TransactionHistory history = new TransactionHistory(billIterm.getAmount(),txtNote.getText(),billIterm.getId(),HomeController.userId);
-            // insert history
-            historyDao.insertImport(history,0);
-            DetailBill detailBill = new DetailBill(billIterm.getAmount(),billIterm.getTotalMoney(),price,idBill,billIterm.getId());
-            detailBillDao.insertDetailBill(detailBill);
         }
-        setNull();
+
+
     }
 
     @FXML
@@ -114,27 +145,44 @@ public class ExportWarehouseController implements Initializable {
         int idProduct = product.get(0).getId();
         long price = product.get(0).getPrice();
         int amount = product.get(0).getAmount();
-        int txAmount = Integer.valueOf(txtAmount.getText());
-        idx = amount - txAmount;
-        long total_money_product = price * txAmount;
-        // tang tien
-        total_money = total_money + total_money_product;
-        if(idx >= 0 ){
-            txtTotalMoney.setText(String.valueOf(total_money));
-            billIterm = new BillIterm(idProduct,name, txAmount, total_money_product,checkBox);
-            tableProduct(billIterm);
-            txtAmount.setText("");
-            cbProduct.setValue(null);
-        }else {
+
+        if(txtAmount.getText().equals("")){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
-            alert.setHeaderText("Số Lượng Sản Phẩm Không Đủ");
-            alert.setContentText("Sản Phẩm Chỉ Còn : "+amount);
+            alert.setHeaderText("Lỗi Thêm Sản Phẩm");
+            alert.setContentText("Thêm số lượng sản phảm bạn cần mua ");
             alert.showAndWait();
-            cbProduct.getItems();
-            txtAmount.setText("");
+        }else {
+            int txAmount = Integer.valueOf(txtAmount.getText());
+            if(txAmount > 0){
+                idx = amount - txAmount;
+                long total_money_product = price * txAmount;
+                // tang tien
+                total_money = total_money + total_money_product;
+                if(idx >= 0 ){
+                    txtTotalMoney.setText(String.valueOf(total_money));
+                    billIterm = new BillIterm(idProduct,name, txAmount, total_money_product,checkBox);
+                    tableProduct(billIterm);
+                    txtAmount.setText("");
+                    cbProduct.setValue(null);
+                }else {
+                    Alert alert=new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("ERROR");
+                    alert.setHeaderText("Số Lượng Sản Phẩm Không Đủ");
+                    alert.setContentText("Sản Phẩm Chỉ Còn "+amount);
+                    alert.showAndWait();
+                    cbProduct.getItems();
+                    txtAmount.setText("");
+                }
+            }else {
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("ERROR");
+                alert.setHeaderText("Số lượng sản phẩm phải nhiều hơn 0");
+                alert.setContentText("Bạn nhập lại số lượng ");
+                alert.showAndWait();
+                txtAmount.setText("");
+            }
         }
-
     }
 
     @FXML
@@ -162,7 +210,14 @@ public class ExportWarehouseController implements Initializable {
         customer_list.addAll(customerDao.customersList());
         tbcCustomer.setCellValueFactory(new PropertyValueFactory<>("name"));
         tbcCusTell.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
-        tbcId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        tbcId.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Customer, String>, ObservableValue<String>>() {
+            @Override
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Customer, String> param) {
+                return new ReadOnlyObjectWrapper(tbSearchCus.getItems().indexOf(param.getValue()) + 1);
+            }
+        });
+        tbcId.setSortable(false);
+//        tbcId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tbSearchCus.setItems(customer_list);
     }
 

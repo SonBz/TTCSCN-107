@@ -5,21 +5,38 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.CustomerBillController">
+<AnchorPane prefHeight="617.0" prefWidth="1000.0" style="-fx-background-color: #ccf3ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.CustomerBillController">
    <children>
-      <TableView fx:id="tableCustomer" layoutX="222.0" layoutY="80.0" onMouseClicked="#onTableCustomerClick" prefHeight="200.0" prefWidth="473.0">
+      <AnchorPane layoutY="-5.0" prefHeight="69.0" prefWidth="1000.0" style="-fx-background-color: #66ccff;">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="64.0" layoutX="329.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/customer.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="392.0" layoutY="17.0" prefHeight="36.0" prefWidth="258.0" text="Danh Sách Khách Hàng">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableCustomer" layoutX="63.0" layoutY="118.0" onMouseClicked="#onTableCustomerClick" prefHeight="200.0" prefWidth="841.0">
         <columns>
-          <TableColumn fx:id="tbId" prefWidth="29.0" text="STT" />
-          <TableColumn fx:id="tbIdCustomer" prefWidth="50.0" text="MKH" />
-            <TableColumn fx:id="tbNameCustomer" prefWidth="86.0" text="Tên" />
-            <TableColumn fx:id="tbAddress" prefWidth="106.0" text="Địa Chỉ" />
-            <TableColumn fx:id="tbTell" prefWidth="98.0" text="SĐT" />
-            <TableColumn fx:id="tbMoneyCustomer" prefWidth="103.0" text="TT Đã Mua" />
+          <TableColumn fx:id="tbId" prefWidth="40.0" text="STT" />
+          <TableColumn fx:id="tbIdCustomer" prefWidth="41.0" text="MKH" />
+            <TableColumn fx:id="tbNameCustomer" prefWidth="207.0" text="Tên Khách Hàng" />
+            <TableColumn fx:id="tbAddress" prefWidth="184.0" text="Địa Chỉ" />
+            <TableColumn fx:id="tbTell" prefWidth="118.0" text="SĐT" />
+            <TableColumn fx:id="tbMoneyCustomer" prefWidth="250.0" text="Thông Tin Đã Mua" />
         </columns>
       </TableView>
-      <TableView fx:id="tableBill" layoutX="63.0" layoutY="325.0" onMouseClicked="#onTableBillClick" prefHeight="200.0" prefWidth="408.0">
+      <TableView fx:id="tableBill" layoutX="63.0" layoutY="362.0" onMouseClicked="#onTableBillClick" prefHeight="200.0" prefWidth="408.0">
         <columns>
           <TableColumn fx:id="tbBill" prefWidth="40.0" text="STT" />
           <TableColumn fx:id="tbDateBill" prefWidth="122.0" text="Ngày Mua" />
@@ -28,19 +45,32 @@
             <TableColumn fx:id="tbUserBill" prefWidth="88.0" text="Người  Bán" />
         </columns>
       </TableView>
-      <TableView fx:id="tableBillDetail" layoutX="536.0" layoutY="325.0" prefHeight="200.0" prefWidth="369.0">
+      <TableView fx:id="tableBillDetail" layoutX="536.0" layoutY="362.0" prefHeight="200.0" prefWidth="369.0">
         <columns>
-          <TableColumn fx:id="tbIdDetail" prefWidth="53.0" text="STT" />
-            <TableColumn fx:id="tbNameProduct" prefWidth="75.0" text="Tên SP" />
-          <TableColumn fx:id="tbAmount" prefWidth="97.0" text="Số Lượng" />
+          <TableColumn fx:id="tbIdDetail" prefWidth="39.0" text="STT" />
+            <TableColumn fx:id="tbNameProduct" prefWidth="128.0" text="Tên Sản Phẩm" />
+          <TableColumn fx:id="tbAmount" prefWidth="58.0" text="Số Lượng" />
             <TableColumn fx:id="tbPrice" prefWidth="75.0" text="Giá" />
             <TableColumn fx:id="tbMoneyDetail" prefWidth="75.0" text="Tiền" />
         </columns>
       </TableView>
-      <JFXButton fx:id="btnExit" layoutX="773.0" layoutY="554.0" onAction="#ClickExit" prefHeight="25.0" prefWidth="58.0" text="Thoát" />
-      <JFXTextField fx:id="txtSearch" focusColor="#24c390" labelFloat="true" layoutX="46.0" layoutY="67.0" onInputMethodTextChanged="#searchCustomer" onKeyReleased="#searchCustomer" prefHeight="25.0" prefWidth="163.0" promptText="Tìm Kiếm" unFocusColor="#1ccdbb" />
-      <Label layoutX="237.0" layoutY="50.0" prefHeight="17.0" prefWidth="172.0" text="Danh Sách Khách Hàng" />
-      <Label layoutX="63.0" layoutY="292.0" prefHeight="17.0" prefWidth="155.0" text="Danh Sách Hóa Đơn" />
-      <Label layoutX="536.0" layoutY="292.0" prefHeight="17.0" prefWidth="140.0" text="Chi TIết Hóa Đơn" />
+      <JFXButton fx:id="btnExit" layoutX="825.0" layoutY="576.0" onAction="#ClickExit" prefHeight="25.0" prefWidth="80.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
+      <JFXTextField fx:id="txtSearch" focusColor="BLACK" labelFloat="true" layoutX="109.0" layoutY="79.0" onInputMethodTextChanged="#searchCustomer" onKeyReleased="#searchCustomer" prefHeight="25.0" prefWidth="163.0" promptText="Tìm Kiếm" unFocusColor="BLACK">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <Label layoutX="206.0" layoutY="336.0" prefHeight="20.0" prefWidth="132.0" text="Danh Sách Hóa Đơn" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="663.0" layoutY="336.0" prefHeight="20.0" prefWidth="115.0" text="Chi Tiết Hóa Đơn" underline="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="63.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/search.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

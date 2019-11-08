@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="486.0" prefWidth="900.0" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.UserController">
+<AnchorPane prefHeight="486.0" prefWidth="900.0" style="-fx-background-color: #ccf3ff;" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hvktmm.at13.controller.UserController">
    <children>
       <JFXTabPane prefHeight="400.0" prefWidth="600.0" side="LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <tabs>
@@ -28,14 +28,14 @@
                      <children>
                         <AnchorPane prefHeight="89.0" prefWidth="761.0" style="-fx-background-color: #19e6e6;" AnchorPane.bottomAnchor="397.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <ImageView fitHeight="80.0" fitWidth="150.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="5.0">
+                              <ImageView fitHeight="80.0" fitWidth="150.0" layoutX="209.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="4.0">
                                  <image>
                                     <Image url="@../img/team.png" />
                                  </image>
                               </ImageView>
-                              <Text fill="#712874" layoutX="165.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Danh Sách Nhân Viên" wrappingWidth="197.13671875" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="363.86328125" AnchorPane.topAnchor="25.0">
+                              <Text layoutX="289.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Danh Sách Nhân Viên" wrappingWidth="354.13671875" AnchorPane.leftAnchor="289.0" AnchorPane.rightAnchor="221.86328125" AnchorPane.topAnchor="22.46875">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="32.0" />
                                  </font>
                               </Text>
                            </children>
@@ -58,9 +58,9 @@
                               <TableColumn fx:id="tbEdit" prefWidth="94.0" text="Edit" />
                           </columns>
                         </TableView>
-                        <JFXButton layoutX="298.0" layoutY="420.0" prefHeight="37.0" prefWidth="50.0" styleClass="contronlerbutton" text="Sửa" />
-                        <JFXButton fx:id="btnExit" layoutX="374.0" layoutY="421.0" onAction="#clickExit" prefHeight="36.0" prefWidth="59.0" styleClass="contronlerbutton" text="Thoát" />
-                        <JFXButton layoutX="461.0" layoutY="424.0" onAction="#clickDelete" prefHeight="33.0" prefWidth="59.0" styleClass="contronlerbutton" text="Xóa" />
+                        <JFXButton layoutX="222.0" layoutY="423.0" prefHeight="37.0" prefWidth="105.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Sửa" />
+                        <JFXButton fx:id="btnExit" layoutX="537.0" layoutY="423.0" onAction="#clickExit" prefHeight="36.0" prefWidth="105.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
+                        <JFXButton layoutX="380.0" layoutY="422.0" onAction="#clickDelete" prefHeight="38.0" prefWidth="105.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Xóa" />
                         <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="97.0" layoutY="102.0" onInputMethodTextChanged="#searchUser" onKeyReleased="#searchUser" prefHeight="25.0" prefWidth="210.0" promptText="Tìm kiếm" AnchorPane.bottomAnchor="356.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="454.0" AnchorPane.topAnchor="105.0" />
                         <ImageView fitHeight="29.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="358.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="669.0" AnchorPane.topAnchor="105.0">
                            <image>
@@ -75,14 +75,14 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <AnchorPane layoutY="7.0" prefHeight="88.0" prefWidth="761.0" style="-fx-background-color: #b6ec13;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutY="7.0" prefHeight="88.0" prefWidth="761.0" style="-fx-background-color: #19e6e6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Text layoutX="258.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thêm Nhân Viên" wrappingWidth="161.0" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="35.0">
+                              <Text layoutX="336.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thêm Nhân Viên" wrappingWidth="236.0" AnchorPane.leftAnchor="336.0" AnchorPane.topAnchor="23.46875">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="32.0" />
                                  </font>
                               </Text>
-                              <ImageView fitHeight="95.0" fitWidth="80.0" layoutX="27.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="654.0" AnchorPane.topAnchor="5.0">
+                              <ImageView fitHeight="95.0" fitWidth="80.0" layoutX="249.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="249.0" AnchorPane.rightAnchor="536.0" AnchorPane.topAnchor="5.0">
                                  <image>
                                     <Image url="@../img/add-user.png" />
                                  </image>
@@ -91,71 +91,71 @@
                         </AnchorPane>
                         <VBox layoutX="97.0" layoutY="115.0" prefHeight="212.0" prefWidth="245.0" AnchorPane.topAnchor="125.0">
                            <children>
-                              <JFXTextField fx:id="txtLastName" labelFloat="true" prefHeight="25.0" prefWidth="216.0" promptText="Họ" unFocusColor="#72f159">
+                              <JFXTextField fx:id="txtLastName" labelFloat="true" prefHeight="25.0" prefWidth="216.0" promptText="Họ" unFocusColor="BLACK">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXTextField fx:id="txtFirstName" labelFloat="true" prefHeight="25.0" prefWidth="217.0" promptText="Tên" unFocusColor="#72f159">
+                              <JFXTextField fx:id="txtFirstName" labelFloat="true" prefHeight="25.0" prefWidth="217.0" promptText="Tên" unFocusColor="BLACK">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXTextField fx:id="txtEmail" labelFloat="true" prefHeight="25.0" prefWidth="219.0" promptText="Email" unFocusColor="#72f159">
+                              <JFXTextField fx:id="txtEmail" labelFloat="true" prefHeight="25.0" prefWidth="219.0" promptText="Email" unFocusColor="BLACK">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXTextField fx:id="txtTell" labelFloat="true" prefHeight="25.0" prefWidth="220.0" promptText="Số Điện Thoại" unFocusColor="#72f159">
+                              <JFXTextField fx:id="txtTell" labelFloat="true" prefHeight="25.0" prefWidth="220.0" promptText="Số Điện Thoại" unFocusColor="BLACK">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXTextField fx:id="txtAddress" labelFloat="true" prefHeight="25.0" prefWidth="222.0" promptText="Địa Chỉ" unFocusColor="#72f159">
+                              <JFXTextField fx:id="txtAddress" labelFloat="true" prefHeight="25.0" prefWidth="222.0" promptText="Địa Chỉ" unFocusColor="BLACK">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </JFXTextField>
                            </children>
                         </VBox>
-                        <VBox layoutX="424.0" layoutY="125.0" prefHeight="210.0" prefWidth="238.0" AnchorPane.topAnchor="125.0">
+                        <VBox layoutX="505.0" layoutY="125.0" prefHeight="210.0" prefWidth="238.0" AnchorPane.topAnchor="125.0">
                            <children>
                               <JFXDatePicker fx:id="txtDateOfBirth" prefHeight="31.0" prefWidth="238.0">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
                               </JFXDatePicker>
-                              <JFXTextField fx:id="txtUsername" labelFloat="true" prefHeight="25.0" prefWidth="177.0" promptText="Userame" unFocusColor="#72f159">
+                              <JFXTextField fx:id="txtUsername" labelFloat="true" prefHeight="25.0" prefWidth="177.0" promptText="Userame" unFocusColor="BLACK">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXTextField fx:id="txtPassword" labelFloat="true" prefHeight="25.0" prefWidth="177.0" promptText="Password" unFocusColor="#72f159">
+                              <JFXTextField fx:id="txtPassword" labelFloat="true" prefHeight="25.0" prefWidth="177.0" promptText="Password" unFocusColor="BLACK">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </JFXTextField>
                               <Label prefHeight="17.0" prefWidth="84.0" text="Giới Tính">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <VBox.margin>
                                     <Insets bottom="5.0" />
@@ -180,8 +180,8 @@
                               </AnchorPane>
                            </children>
                         </VBox>
-                        <JFXButton layoutX="381.0" layoutY="386.0" onAction="#clickExit" prefHeight="38.0" prefWidth="60.0" styleClass="contronlerbutton" text="Thoát" />
-                        <JFXButton layoutX="255.0" layoutY="387.0" onAction="#ClickSave" prefHeight="35.0" prefWidth="61.0" styleClass="contronlerbutton" stylesheets="@../style/styles.css" text="Lưu" />
+                        <JFXButton layoutX="505.0" layoutY="387.0" onAction="#clickExit" prefHeight="35.0" prefWidth="105.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Thoát" />
+                        <JFXButton layoutX="237.0" layoutY="387.0" onAction="#ClickSave" prefHeight="35.0" prefWidth="105.0" styleClass="company-button" stylesheets="@../style/styles.css" text="Lưu" />
                      </children>
                   </AnchorPane>
               </content>
